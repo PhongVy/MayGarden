@@ -6,6 +6,7 @@ package com.daos;
 
 import com.connection.DBConnection;
 import com.models.Accounts;
+import com.models.Categories;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,7 +17,7 @@ import java.util.List;
  *
  * @author Acer
  */
-public class AccountDAOK {
+public class AccountDAO {
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
@@ -43,8 +44,11 @@ public class AccountDAOK {
         }
         return list;
     }
-
-    public List<Accounts> getAllAccount(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+//    public static void main(String[] args) {
+//        AccountDAO dao = new AccountDAO();
+//        List<Accounts> list = dao.getAllAccount();
+//        for (Accounts o : list) {
+//            System.out.println(o);
+//        }
+//    }
 }
