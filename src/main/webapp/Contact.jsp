@@ -24,12 +24,12 @@
           <div class="w-100"></div>
           <div class="col-md-3 d-flex">
           	<div class="info bg-white p-4">
-	            <p><span>Address:</span> No. 600, extended Nguyen Van Cu street, An Khanh ward, Ninh Kieu district, Can Tho city</p>
+	            <p><span>Address:</span> 600, extended Nguyen Van Cu street, An Khanh ward, Ninh Kieu district, Can Tho city</p>
 	          </div>
           </div>
           <div class="col-md-3 d-flex">
           	<div class="info bg-white p-4">
-	            <p><span>Phone:</span> <a href="tel://1234567920">+ 8459 857 442</a></p>
+	            <p><span>Phone:</span> <a href="tel://1234567920">+ 8359 857 442</a></p>
 	          </div>
           </div>
           <div class="col-md-3 d-flex">
@@ -46,17 +46,17 @@
         <div class="row block-9">
           <div class="col-md-6 order-md-last d-flex">
               
-              <form action="FeedbackY" class="bg-white p-5 contact-form" method="post">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
+              <form action="FeedbackY" class="bg-white p-5 contact-form"  method="post">
+                  <div class="form-group" style="margin-top: 20px">
+                      <input name="name" type="text" class="form-control" placeholder="Your Name">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
+                  <input name="email" type="text" class="form-control" placeholder="Your Email">
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
               </div>
-              <div class="form-group">
+                  <div class="form-group" style="margin-top: 50px">
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
               </div>
             </form>
