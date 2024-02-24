@@ -121,7 +121,7 @@
                             </div>
                             <div class="text text-center">
                                <p class="name">Tran Nhat Khanh</p>
-                                <p>CE160823</p>
+                                <p>CE160627</p>
                                 <span class="position">Software Engineering</span>
                                 <p>Member</p>
                             </div>
@@ -151,7 +151,7 @@
                             </div>
                             <div class="text text-center">
                                <p class="name">Le Phu Thanh</p>
-                                <p>CE160823</p>
+                                <p>CA171336</p>
                                 <span class="position">Software Engineering</span>
                                 <p>Member</p>
                             </div>
