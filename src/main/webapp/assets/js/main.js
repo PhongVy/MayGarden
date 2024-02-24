@@ -284,7 +284,7 @@
     }
   });
 
-  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+  $('.popup-youtube, .popup-vimeo').magnificPopup({
     disableOn: 700,
     type: 'iframe',
     mainClass: 'mfp-fade',

@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="Header.jsp" />
 
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
+    <div class="hero-wrap hero-bread" style="background-image: url('./assets/images/bg_1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
@@ -56,7 +56,7 @@
                 <input type="text" class="form-control" placeholder="Subject">
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                <textarea cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
@@ -65,9 +65,7 @@
           
           </div>
 
-          <div class="col-md-6 d-flex">
-          	<div id="map" class="bg-white"></div>
-          </div>
+         
         </div>
       </div>
     </section>
