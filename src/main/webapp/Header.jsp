@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Header
-    Created on : Feb 20, 2024, 4:39:16 PM
-    Author     : PC
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <head>
     <title>MayGarden</title>
