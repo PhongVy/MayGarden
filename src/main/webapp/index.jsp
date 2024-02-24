@@ -11,7 +11,7 @@
 
   <body class="goto-here">
 
-      <jsp:include page="Header.jsp" />
+      <jsp:include page="HeaderV.jsp" />
     <section id="home-section" class="hero">
 		  <div class="home-slider owl-carousel">
 	      <div class="slider-item" style="background-image: url(./assets/images/bg_1.jpg);">
