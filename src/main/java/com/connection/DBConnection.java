@@ -7,48 +7,25 @@ package com.connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author PC
  */
 public class DBConnection {
- 
-public static Connection conn = null;
+    public static Connection conn = null;
 
-    public static Connection getConnection() {
-        if (conn == null) {
-
-            try {
-
-//                  sql server
-                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                String url = "jdbc:sqlserver:LAPTOP-H8EFJKAB\\SQLEXPRESS:1433;databaseName=Project;user=sa;password=123;encrypt=true;trustServerCertificate=true;";
-                try {
-                    conn = DriverManager.getConnection(url);
-                } catch (SQLException ex) {
-                    Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-        }
+    public static Connection getConnection() throws ClassNotFoundException, SQLException {
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String url = "jdbc:sqlserver://DESKTOP-6UIRB0R\\KHANH:1433;databaseName=Project;user=sa;password=123;encrypt=true;trustServerCertificate=true;";
+        conn = DriverManager.getConnection(url);
         return conn;
     }
-
-    public static void closeConnection() {
-        try {
-            if (!conn.isClosed()) {
-                conn.close();
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+    public static void closeConnection() throws SQLException {
+        if (!conn.isClosed()) {
+            conn.close();
         }
     }
-    
 //    public static void main(String[] args) {
 //        Connection connection = null;
 //        try {
