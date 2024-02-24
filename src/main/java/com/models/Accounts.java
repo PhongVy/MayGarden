@@ -29,6 +29,10 @@ public class Accounts {
         this.IsAdmin = IsAdmin;
     }
 
+    public Accounts(int aInt, String string, String string0, String string1, String string2, String string3, String string4) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     @Override
     public String toString() {
         return "Accounts{" + "UserId=" + UserId + ", UserName=" + UserName + ", Password=" + Password + ", FullName=" + FullName + ", Address=" + Address + ", Phone=" + Phone + ", Email=" + Email + ", IsAdmin=" + IsAdmin + '}';
