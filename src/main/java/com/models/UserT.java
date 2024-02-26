@@ -4,126 +4,99 @@
  */
 package com.models;
 
-import java.sql.Date;
-
 /**
  *
- * @author Dell
+ * @author PC
  */
 public class UserT {
+    private int UserId;
+    private String UserName;
+    private String Password;
+    private String FullName;
+    private String Address;
+    private int Phone;
+    private String Email;
+    private boolean IsAdmin;
 
-    private int userID;
-    private String userEmail;
-    private String userPassword;
-    private String userName;
-    private Date userDOB;
-    private String userPhone;
-    private String userAddress;
-
-    public UserT() {
-    }
-
-    public UserT(int userID, String userEmail, String userPassword, String userName, Date userDOB, String userPhone, String userAddress) {
-        this.userID = userID;
-        this.userEmail = userEmail;
-        this.userPassword = userPassword;
-        this.userName = userName;
-        this.userDOB = userDOB;
-        this.userPhone = userPhone;
-        this.userAddress = userAddress;
+    public UserT(int UserId, String UserName, String Password, String FullName, String Address, int Phone, String Email, boolean IsAdmin) {
+        this.UserId = UserId;
+        this.UserName = UserName;
+        this.Password = Password;
+        this.FullName = FullName;
+        this.Address = Address;
+        this.Phone = Phone;
+        this.Email = Email;
+        this.IsAdmin = IsAdmin;
     }
 
-    public UserT(String userEmail, String userPassword, String userName, Date userDOB, String userPhone, String userAddress) {
-        this.userEmail = userEmail;
-        this.userPassword = userPassword;
-        this.userName = userName;
-        this.userDOB = userDOB;
-        this.userPhone = userPhone;
-        this.userAddress = userAddress;
+    @Override
+    public String toString() {
+        return "Accounts{" + "UserId=" + UserId + ", UserName=" + UserName + ", Password=" + Password + ", FullName=" + FullName + ", Address=" + Address + ", Phone=" + Phone + ", Email=" + Email + ", IsAdmin=" + IsAdmin + '}';
     }
 
-    public UserT(int userID, String userEmail, String userName, Date userDOB, String userPhone, String userAddress) {
-        this.userID = userID;
-        this.userEmail = userEmail;
-        this.userName = userName;
-        this.userDOB = userDOB;
-        this.userPhone = userPhone;
-        this.userAddress = userAddress;
-    }
-    
-     public UserT(int userID, String userName, Date userDOB, String userPhone, String userAddress) {
-        this.userID = userID;
-        this.userName = userName;
-        this.userDOB = userDOB;
-        this.userPhone = userPhone;
-        this.userAddress = userAddress;
-    }
-    
-    public UserT(int userID, String userPassword) {
-        this.userID = userID;
-        this.userPassword = userPassword;
-    }
-   
-    
-    public UserT(String userEmail, String userPassword) {
-        this.userEmail = userEmail;
-        this.userPassword = userPassword;
+    public int getUserId() {
+        return UserId;
     }
 
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
-    public String getUserPassword() {
-        return userPassword;
-    }
-
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setUserId(int UserId) {
+        this.UserId = UserId;
     }
 
     public String getUserName() {
-        return userName;
+        return UserName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String UserName) {
+        this.UserName = UserName;
     }
 
-    public Date getUserDOB() {
-        return userDOB;
+    public String getPassword() {
+        return Password;
     }
 
-    public void setUserDOB(Date userDOB) {
-        this.userDOB = userDOB;
+    public void setPassword(String Password) {
+        this.Password = Password;
     }
 
-    public String getUserPhone() {
-        return userPhone;
+    public String getFullName() {
+        return FullName;
     }
 
-    public void setUserPhone(String userPhone) {
-        this.userPhone = userPhone;
+    public void setFullName(String FullName) {
+        this.FullName = FullName;
     }
 
-    public String getUserAddress() {
-        return userAddress;
+    public String getAddress() {
+        return Address;
     }
 
-    public void setUserAddress(String userAddress) {
-        this.userAddress = userAddress;
+    public void setAddress(String Address) {
+        this.Address = Address;
     }
 
+    public int getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(int Phone) {
+        this.Phone = Phone;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+
+    public boolean isIsAdmin() {
+        return IsAdmin;
+    }
+
+    public void setIsAdmin(boolean IsAdmin) {
+        this.IsAdmin = IsAdmin;
+    }
+
+    
 }
