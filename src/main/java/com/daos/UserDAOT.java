@@ -9,7 +9,7 @@ import com.models.UserT;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
-import java.sql.Date;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -56,8 +56,8 @@ public class UserDAOT {
             ps.setString(1, id);
             rs = ps.executeQuery();
             if (rs.next()) {
-                u = new UserT(rs.getInt("userID"), rs.getString("userEmail"), rs.getString("userPassword"), rs.getString("userName"),
-                        rs.getDate("userDayOfBirth"), rs.getString("userPhone"), rs.getString("userAddress"));
+                 u = new UserT(rs.getInt("userID"), rs.getString("userName"), rs.getString("Password"), rs.getString("FullName"),
+                        rs.getString("Address"), rs.getInt("Phone"), rs.getString("Email"), rs.getBoolean("IsAdmin"));
             }
 
         } catch (SQLException ex) {
@@ -73,8 +73,8 @@ public class UserDAOT {
             ps.setString(1, email);
             rs = ps.executeQuery();
             if (rs.next()) {
-                user = new UserT(rs.getInt("userID"), rs.getString("userEmail"), rs.getString("userPassword"), rs.getString("userName"),
-                        rs.getDate("userDayOfBirth"), rs.getString("userPhone"), rs.getString("userAddress"));
+                user = new UserT(rs.getInt("userID"), rs.getString("userName"), rs.getString("Password"), rs.getString("FullName"),
+                        rs.getString("Address"), rs.getInt("Phone"), rs.getString("Email"), rs.getBoolean("IsAdmin"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(UserDAOT.class.getName()).log(Level.SEVERE, null, ex);
@@ -82,54 +82,21 @@ public class UserDAOT {
         return user;
     }
 
-    public boolean Login(UserT user) throws SQLException {
-        ResultSet rs = null;
-        String sql = "Select * from [User] where userEmail = ? and userPassword=?";
-        String password = user.getUserPassword();
-        String hashPassword = hashPassword(password, "MD5");
-        try {
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, user.getUserEmail());
-            ps.setString(2, hashPassword);
-            rs = ps.executeQuery();
-        } catch (Exception e) {
+    
 
-        }
-
-        return rs.next();
-    }
-
-    public int AddNew(UserT us) throws SQLException {
-        String sql = "insert into [User](userEmail,userPassword, userName, userDayOfBirth, userPhone, userAddress) values (?,?,?,?,?,?);";
-        String password = us.getUserPassword();
-        String hashPassword = hashPassword(password, "MD5");
-        int ketqua = 0;
-        try {
-            ps = conn.prepareStatement(sql);
-            ps.setString(1, us.getUserEmail());
-            ps.setString(2, hashPassword.toUpperCase());
-            ps.setString(3, us.getUserName());
-            ps.setDate(4, us.getUserDOB());
-            ps.setString(5, us.getUserPhone());
-            ps.setString(6, us.getUserAddress());
-            ketqua = ps.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(UserDAOT.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return ketqua;
-    }
+    
 
     public int Update(UserT u) {
-        String sql = "update [User] set userName=?, userDayOfBirth=?, userPhone=?, userAddress=? where userID=?";
+        String sql = "update [User] set userName=?, FullName=?, Phone=?, Email=? where userID=?";
         int ketqua = 0;
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, u.getUserName());
-            ps.setDate(2, u.getUserDOB());
-            ps.setString(3, u.getUserPhone());
-            ps.setString(4, u.getUserAddress());
-            ps.setInt(5, u.getUserID());
+            ps.setString(2, u.getFullName());
+            ps.setInt(3, u.getPhone());
+            ps.setString(4, u.getAddress());
+            ps.setString(5, u.getEmail());
+            ps.setInt(6, u.getUserId());
             ketqua = ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(UserDAOT.class.getName()).log(Level.SEVERE, null, ex);
@@ -137,37 +104,16 @@ public class UserDAOT {
         return ketqua;
     }
     
-    public void addUser(String email, String name, String phone, String address, Date date,String password) {
-        try {
-            ps = conn.prepareStatement("INSERT INTO [dbo].[User]\n" +
-                    "           ([userEmail]\n" +
-                    "           ,[userPassword]\n" +
-                    "           ,[userName]\n" +
-                    "           ,[userDayOfBirth]\n" +
-                    "           ,[userPhone]\n" +
-                    "           ,[userAddress])\n" +
-                    "     VALUES\n" +
-                    "           (?,?,?,?,?,?)");
-            ps.setString(1,email);
-            ps.setString(1,password);
-            ps.setString(3,name);
-            ps.setDate(4,date);
-            ps.setString(5,phone);
-            ps.setString(6,address);
-            ps.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(UserDAOT.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+   
     public int UpdatePassword(UserT u) {
-        String password = u.getUserPassword();
+        String password = u.getPassword();
         String hashPassword = hashPassword(password, "MD5");
         String sql = "update [User] set userPassword=? where userID=?";
         int ketqua = 0;
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, hashPassword.toUpperCase());
-            ps.setInt(2, u.getUserID());
+            ps.setInt(2, u.getUserId());
             ketqua = ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(UserDAOT.class.getName()).log(Level.SEVERE, null, ex);
@@ -180,8 +126,8 @@ public class UserDAOT {
             ps = conn.prepareStatement("select * from [User]");
             rs = ps.executeQuery();
             while (rs.next()) {
-                UserT user = new UserT(rs.getInt("userID"), rs.getString("userEmail"), rs.getString("userPassword"), rs.getString("userName"),
-                        rs.getDate("userDayOfBirth"), rs.getString("userPhone"), rs.getString("userAddress"));
+                UserT user = new UserT(rs.getInt("userID"), rs.getString("userName"), rs.getString("Password"), rs.getString("FullName"),
+                        rs.getString("Address"), rs.getInt("Phone"), rs.getString("Email"), rs.getBoolean("IsAdmin"));
                 list.add(user);
             }
         } catch (SQLException ex) {
@@ -198,8 +144,8 @@ public class UserDAOT {
             rs = ps.executeQuery();
             if (rs.next()) {
                 UserT user = new UserT();
-                user = new UserT(rs.getInt("userID"), rs.getString("userEmail"), rs.getString("userPassword"), rs.getString("userName"),
-                        rs.getDate("userDayOfBirth"), rs.getString("userPhone"), rs.getString("userAddress"));
+                user = new UserT(rs.getInt("userID"), rs.getString("userName"), rs.getString("Password"), rs.getString("FullName"),
+                        rs.getString("Address"), rs.getInt("Phone"), rs.getString("Email"), rs.getBoolean("IsAdmin"));
                 return user;
             }
         } catch (SQLException ex) {
@@ -207,19 +153,19 @@ public class UserDAOT {
         }
         return null;
     }
-  public void updateUser(int id, String email, String name, String phone, String address, Date date) {
+  public void updateUser(int id, String email, String name, String FullName, int phone, String address) {
         try {
             ps = conn.prepareStatement("UPDATE [dbo].[User]\n" +
                     "   SET [userEmail] = ?\n" +
                     "      ,[userName] = ?\n" +
-                    "      ,[userDayOfBirth] = ?\n" +
-                    "      ,[userPhone] = ?\n" +
-                    "      ,[userAddress] = ?\n" +
+                    "      ,[FullName] = ?\n" +
+                    "      ,[Phone] = ?\n" +
+                    "      ,[Address] = ?\n" +
                     " WHERE userID = ?");
             ps.setString(1,email);
             ps.setString(2,name);
-            ps.setDate(3,date);
-            ps.setString(4,phone);
+            ps.setString(3,FullName);
+            ps.setInt(4,phone);
             ps.setString(5,address);
             ps.setInt(6,id);
             ps.executeUpdate();
@@ -227,19 +173,10 @@ public class UserDAOT {
             Logger.getLogger(UserDAOT.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-     public void deleteUser(int id){
-        try {
-            ps = conn.prepareStatement("DELETE FROM [dbo].[User]\n" +
-                    "      WHERE userID = ?");
-            ps.setInt(1,id);
-            ps.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(UserDAOT.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+     
              public void updatePassword(String email,String password){
         try {
-            ps = conn.prepareStatement("update [User] set userPassword = ? where userEmail = ? ");
+            ps = conn.prepareStatement("update [User] set Password = ? where Email = ? ");
             ps.setString(1,password);
             ps.setString(2,email);
             ps.executeUpdate();

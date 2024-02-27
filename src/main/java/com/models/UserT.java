@@ -29,6 +29,27 @@ public class UserT {
         this.IsAdmin = IsAdmin;
     }
 
+    public UserT() {
+        
+    }
+
+    public UserT(int UserId, String UserName, String FullName, String address, int phone, String Email, boolean IsAdmin) {
+        this.UserId = UserId;
+        this.UserName = UserName;
+        this.FullName = FullName;
+        this.Address = Address;
+        this.Phone = Phone;
+        this.Email = Email;
+        this.IsAdmin = IsAdmin;
+    }
+
+    public UserT(int UserId, String Password) {
+        this.UserId = UserId;
+        this.Password = Password;
+    }
+
+    
+
     @Override
     public String toString() {
         return "Accounts{" + "UserId=" + UserId + ", UserName=" + UserName + ", Password=" + Password + ", FullName=" + FullName + ", Address=" + Address + ", Phone=" + Phone + ", Email=" + Email + ", IsAdmin=" + IsAdmin + '}';

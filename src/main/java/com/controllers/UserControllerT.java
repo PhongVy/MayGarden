@@ -101,16 +101,18 @@ public class UserControllerT extends HttpServlet {
             throws ServletException, IOException {
         if (request.getParameter("editbtn") != null && request.getParameter("editbtn").equals("edit")) {
             try {
-                int id = Integer.parseInt(request.getParameter("id"));
-                String name = request.getParameter("username");
-                Date DOB = Date.valueOf(request.getParameter("birthday"));
-                String phone = request.getParameter("phone");
+                int UserId = Integer.parseInt(request.getParameter("UserId"));
+                String UserName = request.getParameter("username");
+                String FullName = request.getParameter("FullName");
+                int phone = Integer.parseInt(request.getParameter("phone"));
                 String address = request.getParameter("address");
+                String Email = request.getParameter("Email");
+                boolean IsAdmin = Boolean.parseBoolean(request.getParameter("IsAdmin"));
                 
-                UserT u = new UserT(id, name, DOB, phone, address);
+                UserT u = new UserT(UserId, UserName, FullName, address, phone, Email, IsAdmin);
                 UserDAOT dao = new UserDAOT();
                 int result = dao.Update(u);
-                UserT getuser = dao.GetUserId(String.valueOf(id));
+                UserT getuser = dao.GetUserId(String.valueOf(UserId));
                 if (result != 0) {
                     HttpSession session = request.getSession();
                     session.setAttribute("thongtinnguoidung", getuser);
@@ -131,19 +133,19 @@ public class UserControllerT extends HttpServlet {
             try {
                 UserDAOT dao = new UserDAOT();
                 
-                int id = Integer.parseInt(request.getParameter("id"));
+                int UserId = Integer.parseInt(request.getParameter("id"));
                 String oldpass = request.getParameter("oldpass");
                 String newpass = request.getParameter("newpass");
                 String hassnewpass = hashPassword(oldpass, "MD5");
                 String alertMess = "";
-                UserT u1 = dao.GetUserId(String.valueOf(id));
-                if (!hassnewpass.equalsIgnoreCase(u1.getUserPassword())) {
-                    alertMess = "Thay đổi thất bại, hãy sai mật khẩu hiện tại";
+                UserT u1 = dao.GetUserId(String.valueOf(UserId));
+                if (!hassnewpass.equalsIgnoreCase(u1.getPassword())) {
+                    alertMess = "Thay đổi thất bại, hãy nhập khác với mật khẩu hiện tại";
                     request.setAttribute("alertMess", alertMess);
                     request.setAttribute("display", "block");
                     request.getRequestDispatcher("/userInformation.jsp").forward(request, response);
                 } else {
-                    UserT u = new UserT(id, newpass);
+                    UserT u = new UserT(UserId, newpass);
                     int result = dao.UpdatePassword(u);
                     if (result != 0) {
                         alertMess = "Thay đổi thành công, mời bạn đăng nhập lại.";
