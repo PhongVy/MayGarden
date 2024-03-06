@@ -9,46 +9,48 @@ package com.models;
  * @author yentk
  */
 public class Feedback {
-    private String username;
-    private String email;
-    private String message;
-    
-    public Feedback(){}
+    private String Email;
+    private String Name;
+    private String Description;
 
-    public String getUsername() {
-        return username;
+    public Feedback() {
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public Feedback(String Email, String Name, String Description) {
+        this.Email = Email;
+        this.Name = Name;
+        this.Description = Description;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
 
-    public String getMessage() {
-        return message;
+    public String getName() {
+        return Name;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
-    public Feedback(String username, String email, String message) {
-        this.username = username;
-        this.email = email;
-        this.message = message;
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
 
     @Override
     public String toString() {
-        return "Feedback{" + "username=" + username + ", email=" + email + ", message=" + message + '}';
+        return "Feedback{" + "Email=" + Email + ", Name=" + Name + ", Description=" + Description + '}';
     }
+    
     
     
 }
