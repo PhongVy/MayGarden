@@ -47,18 +47,17 @@
             <div class="col-md-6 order-md-last d-flex">
 
                 <form action="FeedbackY" class="bg-white p-5 contact-form"  method="post">
-                    <div class="form-group" style="margin-top: 20px">
-                        <input name="name" type="text" class="form-control" placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <input name="email" type="text" class="form-control" placeholder="Your Email">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-                    </div>
-                    <div class="form-group" style="margin-top: 50px">
-                        <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-                    </div>
+                    <p class="text-danger" >${mess}</p>
+                    
+                        <input name="name" required type="text" class="form-control form-group" style="margin-top: 20px" placeholder="Your Name">
+                    
+      
+                        <input name="email" required type="text" class="form-control form-group"  placeholder="Your Email">
+                  
+                        <textarea name="message" required id="" cols="30" rows="7" class="form-control form-group" placeholder="Message"></textarea>
+                    
+                        <button type="submit" value="FeedbackY" style="margin-top: 50px; color:white" class="form-group btn btn-primary py-3 px-5">Send Message</button>
+                    
                 </form>
 
             </div>
