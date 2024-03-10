@@ -24,6 +24,14 @@
         <servlet-name>ProductControllerY</servlet-name>
         <servlet-class>com.controllers.ProductControllerY</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CategoryControllerY</servlet-name>
+        <servlet-class>com.controllers.CategoryControllerY</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailProductProductControllerY</servlet-name>
+        <servlet-class>com.controllers.DetailProductProductControllerY</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginControllerV</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>ProductControllerY</servlet-name>
         <url-pattern>/Product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CategoryControllerY</servlet-name>
+        <url-pattern>/Category</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailProductProductControllerY</servlet-name>
+        <url-pattern>/Detail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
