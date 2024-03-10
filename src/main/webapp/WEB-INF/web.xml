@@ -20,6 +20,10 @@
         <servlet-name>HomeControllerV</servlet-name>
         <servlet-class>com.controllers.HomeControllerV</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProductControllerY</servlet-name>
+        <servlet-class>com.controllers.ProductControllerY</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginControllerV</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>HomeControllerV</servlet-name>
         <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductControllerY</servlet-name>
+        <url-pattern>/Product</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
