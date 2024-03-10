@@ -78,7 +78,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="index.jsp" class="nav-link" style="font-size: 16px">Home</a></li>
 
-                    <li class="nav-item"><a href="Product.jsp" class="nav-link" style="font-size: 16px">Product</a></li>
+                    <li class="nav-item"><a href="Product" class="nav-link" style="font-size: 16px">Product</a></li>
                     <li class="nav-item"><a href="About.jsp" class="nav-link" style="font-size: 16px">About us</a></li>
                     <li class="nav-item"><a href="Contact.jsp" class="nav-link" style="font-size: 16px">Contact</a></li>
                     
