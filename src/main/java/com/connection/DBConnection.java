@@ -17,7 +17,9 @@ public class DBConnection {
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+
         String url = "jdbc:sqlserver://LAPTOP-DFQORK9J:1433;databaseName=Project;user=sa;password=phongvy25;encrypt=true;trustServerCertificate=true;";
+
         conn = DriverManager.getConnection(url);
         return conn;
     }
@@ -26,23 +28,24 @@ public class DBConnection {
             conn.close();
         }
     }
-    public static void main(String[] args) {
-        Connection connection = null;
-        try {
-            connection = DBConnection.getConnection();
-            System.out.println("Connected to the database!");
-        } catch (Exception e) {
-            System.err.println("Failed to connect to the database.");
-            e.printStackTrace();
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                    System.out.println("Connection closed.");
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
+
+//    public static void main(String[] args) {
+//        Connection connection = null;
+//        try {
+//            connection = DBConnection.getConnection();
+//            System.out.println("Connected to the database!");
+//        } catch (Exception e) {
+//            System.err.println("Failed to connect to the database.");
+//            e.printStackTrace();
+//        } finally {
+//            if (connection != null) {
+//                try {
+//                    connection.close();
+//                    System.out.println("Connection closed.");
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//    }
 }
