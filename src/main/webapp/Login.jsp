@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:include page="HeaderV.jsp" />
+<jsp:include page="Header.jsp" />
 
 <form method="post" name="f1" action="Login">
 <div style="padding-left: 30%; margin-top: 70px; margin-bottom: 70px">
@@ -18,7 +18,7 @@
             <p class="text-danger" style="font-family: 'Font Awesome 5 Free'">${mess}</p>
             
             <div style="display: flex; align-items: center; justify-content: space-between">
-                <p style="font-family: 'Font Awesome 5 Free'; min-width: 150px">UserName</p>
+                <p style="font-family: 'Font Awesome 5 Free'; min-width: 150px">Email</p>
                 <input name="username" type="text" value="" style="flex: 1; outline: 0.5px solid #82ae46" required autofocus="">
             </div>
             
@@ -29,10 +29,12 @@
             
             <div style="text-align: center; margin-top: 10px">
                 <button type="submit" value="Login" class="btn" style="background: #82ae46; color: white; font-family:'Font Awesome 5 Free'; border: 1px solid #82ae46; border-radius: 10px; padding: 10px 20px;width: 560px; font-size: 18px">Login</button>
-
             </div>
+<!--            <div style="text-align: center; padding-top: 20px">
+                <a href='Forgot.jsp'>Forgot password?</a>
+            </div>-->
             <div style="text-align: center;">
-                <p style="padding-top: 20px">
+                <p style="padding-top: 10px">
                     Do you have an account? <a style="text-decoration: underline" href="Register.jsp">Register</a>
                 </p>
             </div>

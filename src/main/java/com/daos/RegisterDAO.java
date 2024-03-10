@@ -6,10 +6,10 @@ package com.daos;
 
 import com.connection.DBConnection;
 import com.models.Accounts;
+import static com.service.MD5.getMd5;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.Date;
 
 /**
  *
@@ -20,26 +20,29 @@ public class RegisterDAO {
     PreparedStatement ps = null;
     ResultSet rs = null;
     public void register(String user, String pass, String fullname, String address, int phone, String email){
-        String query = "Insert into Acocunts\n"
-                + "values(0,?,?,?,?,?,?,0)";
+        String hashPass = getMd5(pass);
+        
+        String query = "Insert into Accounts "
+                + "values(?,?,?,?,?,?,'False')";
         try{
             conn = new DBConnection().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, user);
-            ps.setString(2, pass);
+            ps.setString(2, hashPass);
             ps.setString(3, fullname);
             ps.setString(4, address);
             ps.setInt(5, phone);
             ps.setString(6, email);
             ps.executeUpdate();
         } catch(Exception e){
-            
+            e.printStackTrace();
         }
     }
     
     public Accounts checkRegister(String user){
-        String query = "Select * from Accounts"
-                + "where UserName = ?";
+        
+        String query = "Select * from Accounts "
+                + "where Email = ?";
         try{
             conn = new DBConnection().getConnection();
             ps = conn.prepareStatement(query);
@@ -57,7 +60,7 @@ public class RegisterDAO {
                                     rs.getBoolean(8));
             }
         } catch(Exception e){
-            
+            e.printStackTrace();
         }
         return null;
     }

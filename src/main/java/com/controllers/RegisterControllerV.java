@@ -86,16 +86,18 @@ public class RegisterControllerV extends HttpServlet {
         String address = request.getParameter("address");
 
         if (!pass.equals(repass)) {
-            response.sendRedirect("Register.jsp");
+            request.setAttribute("mess", "Confirm password not match!");
+            request.getRequestDispatcher("Register.jsp").forward(request, response);
         } else {
             RegisterDAO accDao = new RegisterDAO();
             Accounts a = accDao.checkRegister(user);
 
             if (a == null) {
                 accDao.register(user, pass, fullname, address, phoneInt, email);
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("Login.jsp");
             } else {
-                response.sendRedirect("Register.jsp");
+                request.setAttribute("mess", "Account has been registered!");
+                request.getRequestDispatcher("Register.jsp").forward(request, response);
             }
         }
     }

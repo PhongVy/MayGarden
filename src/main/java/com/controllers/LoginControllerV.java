@@ -57,7 +57,7 @@ public class LoginControllerV extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        
     } 
 
     /** 
@@ -77,13 +77,12 @@ public class LoginControllerV extends HttpServlet {
             LoginDAOV loginDAO = new LoginDAOV();
             Accounts a = loginDAO.checkLogin(user, pass);
             if(a==null){
-                request.setAttribute("mess", "Wrong user or password!");
+                request.setAttribute("mess", "Wrong email or password!");
                 request.getRequestDispatcher("Login.jsp").forward(request, response);
             }else {
-                System.out.println("IsAdmin value: " + a.isIsAdmin());
                 HttpSession session = request.getSession();
                 session.setAttribute("acc", a);
-                session.setMaxInactiveInterval(10);
+                session.setMaxInactiveInterval(600);
                 response.sendRedirect("index.jsp ");
             } 
             //HttpSession session = request.getSession();

@@ -13,10 +13,6 @@ public class Categories {
     private String CatName;
     private String Description;
 
-    @Override
-    public String toString() {
-        return "Categories{" + "CatId=" + CatId + ", CatName=" + CatName + ", Description=" + Description + '}';
-    }
 
     public int getCatId() {
         return CatId;
@@ -40,6 +36,9 @@ public class Categories {
 
     public void setDescription(String Description) {
         this.Description = Description;
+    }
+
+    public Categories() {
     }
 
     public Categories(int CatId, String CatName, String Description) {

@@ -7,9 +7,20 @@ package com.daos;
 import com.connection.DBConnection;
 import com.models.Accounts;
 import com.service.MD5;
+import static com.service.MD5.getMd5;
+import jakarta.mail.Authenticator;
+import jakarta.mail.Message;
+import jakarta.mail.MessagingException;
+import jakarta.mail.PasswordAuthentication;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Properties;
+import java.util.Random;
 
 /**
  *
@@ -22,11 +33,13 @@ public class LoginDAOV {
     
     public Accounts checkLogin(String user, String pass){
         try{
-            String query = "select * from Accounts where UserName= ? and Password= ?";
+            String hashPass = getMd5(pass);
+            
+            String query = "select * from Accounts where Email= ? and Password= ?";
             conn = new DBConnection().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, user);
-            ps.setString(2, pass);
+            ps.setString(2, hashPass);
             rs = ps.executeQuery();
             while(rs.next()){
                 Accounts a = new Accounts(rs.getInt(1), 
@@ -46,4 +59,6 @@ public class LoginDAOV {
         
         return null;
     }
+    
+
 }
