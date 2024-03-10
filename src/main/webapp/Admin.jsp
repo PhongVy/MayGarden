@@ -25,7 +25,8 @@
         <!-- Top container -->
         <div class="w3-bar w3-top w3-large" style="z-index:4; background: #81c408">
             <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-            <a href="~/Login/Logout" class="w3-bar-item w3-right" style="background: #81c408; color: white; text-decoration:none">Logout</a>
+            <a href="Logout" class="w3-bar-item w3-right" style="background: #81c408; color: white; text-decoration:none">Logout</a>
+            <a href="./index.jsp" class="w3-bar-item w3-right" style="background: #81c408; color: white; text-decoration:none">Home</a>
         </div>
 
         <!-- Sidebar/menu -->

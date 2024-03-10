@@ -14,39 +14,41 @@
             <div style=" border-radius: 30px 30px 0 0; text-align: center; padding:0.01em 16px">
             <h2 style="font-family: 'Font Awesome 5 Free'">REGISTER</h2>
         </div>
+            <p class="text-danger" style="font-family: 'Font Awesome 5 Free'">${mess}</p>
+            <p class="text-danger" style="font-family: 'Font Awesome 5 Free'">${messP}</p>
             <div style="display: flex; align-items: center; justify-content: space-between">
                 <p style="font-family: 'Font Awesome 5 Free'; min-width: 150px">UserName</p>
-                <input name="user" type="text" style="flex: 1; outline: 0.5px solid #82ae46">
+                <input name="user" type="text" style="flex: 1; outline: 0.5px solid #82ae46" required="" autofocus="">
             </div>
             
             <div style="display: flex; align-items: center; justify-content: space-between">
                 <p style="font-family: 'Font Awesome 5 Free'; min-width: 150px">Password</p>
-                <input name="pass" type="password" style="flex: 1; outline: 0.5px solid #82ae46">
+                <input name="pass" type="password" style="flex: 1; outline: 0.5px solid #82ae46" required="">
             </div>
             
             <div style="display: flex; align-items: center; justify-content: space-between">
                 <p style="font-family: 'Font Awesome 5 Free'; min-width: 150px">Confirm Password</p>
-                <input name="repass" type="password" style="flex: 1; outline: 0.5px solid #82ae46">
+                <input name="repass" type="password" style="flex: 1; outline: 0.5px solid #82ae46" required="">
             </div>
             
             <div style="display: flex; align-items: center; justify-content: space-between">
                 <p style="font-family: 'Font Awesome 5 Free'; min-width: 150px">Email</p>
-                <input name="email" type="text" style="flex: 1; outline: 0.5px solid #82ae46">
+                <input name="email" type="text" style="flex: 1; outline: 0.5px solid #82ae46" required="">
             </div>
             
             <div style="display: flex; align-items: center; justify-content: space-between">
                 <p style="font-family: 'Font Awesome 5 Free'; min-width: 150px">Full Name</p>
-                <input name="fullname" type="text" style="flex: 1; outline: 0.5px solid #82ae46">
+                <input name="fullname" type="text" style="flex: 1; outline: 0.5px solid #82ae46" required="">
             </div>
             
             <div style="display: flex; align-items: center; justify-content: space-between">
                 <p style="font-family: 'Font Awesome 5 Free'; min-width: 150px">Phone</p>
-                <input name="phone" type="text" style="flex: 1; outline: 0.5px solid #82ae46">
+                <input name="phone" type="text" style="flex: 1; outline: 0.5px solid #82ae46" required="">
             </div>
             
             <div style="display: flex; align-items: center; justify-content: space-between">
                 <p style="font-family: 'Font Awesome 5 Free'; min-width: 150px">Address</p>
-                <input name="address" type="text" style="flex: 1; outline: 0.5px solid #82ae46">
+                <input name="address" type="text" style="flex: 1; outline: 0.5px solid #82ae46" required="">
             </div>
             
             <div style="text-align: center; margin-top: 10px">

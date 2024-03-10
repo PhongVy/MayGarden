@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  *
- * @author Nguyen Hong Phong Vy
+ * @author PC
  */
 public class MD5 {
     public static String getMd5(String password) {
@@ -18,10 +18,10 @@ public class MD5 {
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] messageDigest = md.digest(password.getBytes());
 
-            BigInteger no = new BigInteger(1, messageDigest);
+            BigInteger no = new BigInteger(1, messageDigest);//chuyển đổi byte array thành số thập lục phân
 
-            String hashtext = no.toString(16);
-            while (hashtext.length() < 32) {
+            String hashtext = no.toString(16);//thập lục phân => hex
+            while (hashtext.length() < 32) {// Thêm các số 0 ở trước nếu cần thiết để có độ dài 32 ký tự
                 hashtext = "0" + hashtext;
             }
             return hashtext;

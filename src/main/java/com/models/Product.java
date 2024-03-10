@@ -22,9 +22,7 @@ public class Product {
     private int UnitInStock;
     private boolean Published;
 
-    @Override
-    public String toString() {
-        return "Product{" + "ProductId=" + ProductId + ", productName=" + productName + ", CatId=" + CatId + ", ShortDesc=" + ShortDesc + ", Description=" + Description + ", Price=" + Price + ", ProductImage=" + ProductImage + ", DateCreate=" + DateCreate + ", UnitInStock=" + UnitInStock + ", Published=" + Published + '}';
+    public Product() {
     }
 
     public int getProductId() {

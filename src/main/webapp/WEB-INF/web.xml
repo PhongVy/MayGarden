@@ -12,6 +12,14 @@
         <servlet-name>LogoutController</servlet-name>
         <servlet-class>com.controllers.LogoutControllerV</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchController</servlet-name>
+        <servlet-class>com.controllers.SearchController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HomeControllerV</servlet-name>
+        <servlet-class>com.controllers.HomeControllerV</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginControllerV</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -24,9 +32,20 @@
         <servlet-name>LogoutController</servlet-name>
         <url-pattern>/Logout</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchController</servlet-name>
+        <url-pattern>/Search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HomeControllerV</servlet-name>
+        <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>Home</welcome-file>
+    </welcome-file-list>
 </web-app>
