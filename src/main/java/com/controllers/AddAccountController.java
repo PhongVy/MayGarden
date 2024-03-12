@@ -5,20 +5,21 @@
 package com.controllers;
 
 import com.daos.AccountDAO;
+import com.daos.RegisterDAO;
 import com.models.Accounts;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
  * @author Acer
  */
-public class AccountController extends HttpServlet {
+public class AddAccountController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +38,10 @@ public class AccountController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AccountController</title>");
+            out.println("<title>Servlet AddAccountController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AccountController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet AddAccountController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,10 +59,29 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String username = request.getParameter("Username");
+        String password = request.getParameter("Password");
+        String fullname = request.getParameter("Fullname");
+        String address = request.getParameter("Address");
+        String phone = request.getParameter("Phone");
+        int phoneInt = Integer.parseInt(phone);
+        String email = request.getParameter("Email");
+        String isadminString = request.getParameter("isAdmin");
+        boolean isadmin = Boolean.valueOf(isadminString);
         AccountDAO dao = new AccountDAO();
-        List<Accounts> list = dao.getAllAccount();
-        request.setAttribute("listA", list);
-        request.getRequestDispatcher("AdminAccount.jsp").forward(request, response);
+        
+            RegisterDAO accDao = new RegisterDAO();
+            Accounts a = accDao.checkRegister(username);
+
+            if (a == null) {
+                dao.InsertAccount(username, password, fullname, address, phoneInt, email, isadmin);
+                response.sendRedirect("Account");
+            } else {
+                request.setAttribute("mess", "Account has been registered!");
+                request.getRequestDispatcher("Account").forward(request, response);
+            }
+        
+
     }
 
     /**

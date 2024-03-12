@@ -7,6 +7,7 @@ package com.daos;
 import com.connection.DBConnection;
 import com.models.Categories;
 import com.models.Product;
+import static com.service.MD5.getMd5;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,11 +20,11 @@ import java.util.List;
  * @author yentk
  */
 public class CategoryDAOY {
-    
+
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
-    
+
     public List<Categories> getListCat() {
         List<Categories> list = new ArrayList<>();
         String query = "select * from Categories";
@@ -42,12 +43,68 @@ public class CategoryDAOY {
         return list;
     }
 
-    public static void main(String[] args) {
-        ProductDAOV dao = new ProductDAOV();
-        List<Categories> list = dao.getListCat();
-        
-        for (Categories o : list) {
-            System.out.println(o);
+    public void InsertCat(int catid, String catname, String description) {
+        String query = "Insert into Categories "
+                + "values(?,?,?)";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, catid);
+            ps.setString(2, catname);
+            ps.setString(3, description);
+            ps.executeUpdate();
+        } catch (Exception e) {
         }
     }
+    
+    public Categories getCatByID(String CatId) {
+        String query = "select * from Categories where CatId = ?";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, CatId);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Categories(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3));
+            }
+        } catch (Exception e) {
+        }
+        return null;
+
+    }
+    
+    public void EditCat(String catid, String catname, String description) {
+        String query = "Update Categories set CatName=?, Description=? where CatId=?";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, catname);
+            ps.setString(2, description);
+            ps.setString(3, catid);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
+    public void DeleteCat(String CatId) {
+        String query = "delete from Categories where [CatId] = ?";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, CatId);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
+//    public static void main(String[] args) {
+//        ProductDAOV dao = new ProductDAOV();
+//        List<Categories> list = dao.getListCat();
+//        
+//        for (Categories o : list) {
+//            System.out.println(o);
+//        }
+//    }
 }

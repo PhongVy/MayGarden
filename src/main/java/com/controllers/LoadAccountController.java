@@ -8,7 +8,6 @@ import com.daos.AccountDAO;
 import com.models.Accounts;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author Acer
  */
-public class AccountController extends HttpServlet {
+public class LoadAccountController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +36,10 @@ public class AccountController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AccountController</title>");
+            out.println("<title>Servlet LoadAccountController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AccountController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet LoadAccountController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,10 +57,12 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String id = request.getParameter("uid");
         AccountDAO dao = new AccountDAO();
-        List<Accounts> list = dao.getAllAccount();
-        request.setAttribute("listA", list);
-        request.getRequestDispatcher("AdminAccount.jsp").forward(request, response);
+        Accounts a = dao.getAccountByID(id);
+        
+        request.setAttribute("detail", a);
+        request.getRequestDispatcher("Edit.jsp").forward(request, response);
     }
 
     /**
@@ -75,7 +76,7 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        processRequest(request, response);
     }
 
     /**

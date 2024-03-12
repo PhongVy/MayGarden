@@ -5,20 +5,22 @@
 package com.controllers;
 
 import com.daos.AccountDAO;
+import com.daos.CategoryDAOY;
 import com.models.Accounts;
+import com.models.Categories;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  *
  * @author Acer
  */
-public class AccountController extends HttpServlet {
+public class CategoryController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +39,10 @@ public class AccountController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AccountController</title>");
+            out.println("<title>Servlet CategoryController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AccountController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CategoryController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,10 +60,10 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        AccountDAO dao = new AccountDAO();
-        List<Accounts> list = dao.getAllAccount();
-        request.setAttribute("listA", list);
-        request.getRequestDispatcher("AdminAccount.jsp").forward(request, response);
+        CategoryDAOY dao = new CategoryDAOY();
+        List<Categories> list = dao.getListCat();
+        request.setAttribute("listC", list);
+        request.getRequestDispatcher("AdminCategory.jsp").forward(request, response);
     }
 
     /**
@@ -75,7 +77,7 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        processRequest(request, response);
     }
 
     /**

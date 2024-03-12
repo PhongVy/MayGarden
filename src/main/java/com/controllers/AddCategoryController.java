@@ -5,10 +5,11 @@
 package com.controllers;
 
 import com.daos.AccountDAO;
+import com.daos.CategoryDAOY;
+import com.daos.RegisterDAO;
 import com.models.Accounts;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,7 +19,7 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author Acer
  */
-public class AccountController extends HttpServlet {
+public class AddCategoryController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +38,10 @@ public class AccountController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AccountController</title>");
+            out.println("<title>Servlet AddCategoryController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AccountController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet AddCategoryController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,10 +59,14 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        AccountDAO dao = new AccountDAO();
-        List<Accounts> list = dao.getAllAccount();
-        request.setAttribute("listA", list);
-        request.getRequestDispatcher("AdminAccount.jsp").forward(request, response);
+        String catid = request.getParameter("CatId");
+        int catidInt = Integer.parseInt(catid);
+        String catname = request.getParameter("CatName");
+        String description = request.getParameter("Description");
+
+        CategoryDAOY dao = new CategoryDAOY();
+        dao.InsertCat(catidInt, catname, description);
+        response.sendRedirect("Category");
     }
 
     /**
@@ -75,7 +80,7 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        processRequest(request, response);
     }
 
     /**
