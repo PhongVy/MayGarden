@@ -76,8 +76,10 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
+
                     <!-- Menu -->
                     <li class="nav-item"><a href="Home" class="nav-link" style="font-size: 16px">Home</a></li>
+
                     <li class="nav-item"><a href="Product" class="nav-link" style="font-size: 16px">Product</a></li>
                     <li class="nav-item"><a href="About.jsp" class="nav-link" style="font-size: 16px">About us</a></li>
                     <li class="nav-item"><a href="Contact.jsp" class="nav-link" style="font-size: 16px">Contact</a></li>

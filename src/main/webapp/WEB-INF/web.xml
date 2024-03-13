@@ -21,6 +21,7 @@
         <servlet-class>com.controllers.HomeControllerV</servlet-class>
     </servlet>
     <servlet>
+
         <servlet-name>OrderAdminV</servlet-name>
         <servlet-class>com.controllers.OrderAdminV</servlet-class>
     </servlet>
@@ -29,10 +30,18 @@
         <servlet-class>com.controllers.ProductController</servlet-class>
     </servlet>
     <servlet>
+
+        <servlet-name>ProductControllerY</servlet-name>
+        <servlet-class>com.controllers.ProductControllerY</servlet-class>
+    </servlet>
+    <servlet>
+
+
         <servlet-name>AccountController</servlet-name>
         <servlet-class>com.controllers.AccountController</servlet-class>
     </servlet>
     <servlet>
+
         <servlet-name>CategoryControllerV</servlet-name>
         <servlet-class>com.controllers.CategoryControllerV</servlet-class>
     </servlet>
@@ -63,6 +72,58 @@
     <servlet>
         <servlet-name>LoadProductController</servlet-name>
         <servlet-class>com.controllers.LoadProductController</servlet-class>
+
+        <servlet-name>CategoryController</servlet-name>
+        <servlet-class>com.controllers.CategoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteAccountController</servlet-name>
+        <servlet-class>com.controllers.DeleteAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddAccountController</servlet-name>
+        <servlet-class>com.controllers.AddAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteCategoryController</servlet-name>
+        <servlet-class>com.controllers.DeleteCategoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddCategoryController</servlet-name>
+        <servlet-class>com.controllers.AddCategoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailAccountController</servlet-name>
+        <servlet-class>com.controllers.DetailAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadAccountController</servlet-name>
+        <servlet-class>com.controllers.LoadAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditAccountController</servlet-name>
+        <servlet-class>com.controllers.EditAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailCategoryController</servlet-name>
+        <servlet-class>com.controllers.DetailCategoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadCategoryController</servlet-name>
+        <servlet-class>com.controllers.LoadCategoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditCategoryController</servlet-name>
+        <servlet-class>com.controllers.EditCategoryController</servlet-class>
+
+        <servlet-name>CategoryControllerY</servlet-name>
+        <servlet-class>com.controllers.CategoryControllerY</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailProductProductControllerY</servlet-name>
+        <servlet-class>com.controllers.DetailProductProductControllerY</servlet-class>
+
+
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginControllerV</servlet-name>
@@ -85,6 +146,7 @@
         <url-pattern>/Home</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+
         <servlet-name>OrderAdminV</servlet-name>
         <url-pattern>/Order</url-pattern>
     </servlet-mapping>
@@ -93,10 +155,17 @@
         <url-pattern>/Product</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+
+        <servlet-name>ProductControllerY</servlet-name>
+        <url-pattern>/Product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/Account</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+
         <servlet-name>CategoryControllerV</servlet-name>
         <url-pattern>/Category</url-pattern>
     </servlet-mapping>
@@ -128,6 +197,60 @@
         <servlet-name>LoadProductController</servlet-name>
         <url-pattern>/LoadProduct</url-pattern>
     </servlet-mapping>
+
+        <servlet-name>CategoryController</servlet-name>
+        <url-pattern>/Category</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteAccountController</servlet-name>
+        <url-pattern>/Delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddAccountController</servlet-name>
+        <url-pattern>/Add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteCategoryController</servlet-name>
+        <url-pattern>/DeleteCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCategoryController</servlet-name>
+        <url-pattern>/AddCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailAccountController</servlet-name>
+        <url-pattern>/Detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadAccountController</servlet-name>
+        <url-pattern>/Load</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditAccountController</servlet-name>
+        <url-pattern>/Edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailCategoryController</servlet-name>
+        <url-pattern>/DetailCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadCategoryController</servlet-name>
+        <url-pattern>/LoadCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditCategoryController</servlet-name>
+        <url-pattern>/EditCategory</url-pattern>
+    </servlet-mapping>
+
+        <servlet-name>CategoryControllerY</servlet-name>
+        <url-pattern>/Category</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailProductProductControllerY</servlet-name>
+        <url-pattern>/Detail</url-pattern>
+    </servlet-mapping>
+
+
     <session-config>
         <session-timeout>
             30

@@ -5,21 +5,19 @@
 
 package com.controllers;
 
-import com.daos.AccountDAO;
-import com.models.Accounts;
+import com.daos.CategoryDAOY;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  *
- * @author PC
+ * @author Acer
  */
-public class AccountController extends HttpServlet {
+public class DeleteCategoryController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -31,20 +29,19 @@ public class AccountController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-
-            out.println("<title>Servlet AccountController</title>");
+            out.println("<title>Servlet DeleteCategoryController</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AccountController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet DeleteCategoryController at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
-    }
+    } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
@@ -56,7 +53,12 @@ public class AccountController extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-
+    throws ServletException, IOException {
+        String CatId = request.getParameter("CatId");
+        CategoryDAOY dao = new CategoryDAOY();
+        dao.DeleteCat(CatId);
+        response.sendRedirect("Category");
+    } 
 
     /** 
      * Handles the HTTP <code>POST</code> method.
@@ -67,10 +69,8 @@ public class AccountController extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-
-            throws ServletException, IOException {
-        
-
+    throws ServletException, IOException {
+        processRequest(request, response);
     }
 
     /** 
