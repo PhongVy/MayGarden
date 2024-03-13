@@ -25,6 +25,10 @@ public class Order {
         this.Note = Note;
     }
 
+    public Order() {
+    }
+    
+
     public int getOrder() {
         return Order;
     }
@@ -65,9 +69,5 @@ public class Order {
         this.Note = Note;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" + "Order=" + Order + ", UserId=" + UserId + ", OrderDate=" + OrderDate + ", ShipDate=" + ShipDate + ", Note=" + Note + '}';
-    }
     
 }

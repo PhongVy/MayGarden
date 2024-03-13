@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home</a></span> <span>About us</span></p>
+                <p class="breadcrumbs"><span class="mr-2"><a href="Home">Home</a></span> <span>About us</span></p>
                 <h1 class="mb-0 bread">About us</h1>
             </div>
         </div>
@@ -35,7 +35,7 @@
                     <p>The MayGarden website is designed with a user-friendly interface, allowing users to easily browse through product categories, view detailed information, and make purchases conveniently. Products on the website are categorized into sections such as green vegetables, leafy greens, fruits, and other organic products, enabling consumers to easily find and purchase items according to their needs.
                     </p>
                     <p>MayGarden is not just a shopping destination but also a valuable source of information on healthy eating and organic living. With a mission to create a community passionate about clean and organic food, MayGarden aims to contribute to enhancing the quality of life for everyone by providing high-quality products and useful nutritional information.</p>
-                    <p><a href="index.jsp" class="btn btn-primary">Shop now</a></p>
+                    <p><a href="Product" class="btn btn-primary">Shop now</a></p>
                 </div>
             </div>
         </div>

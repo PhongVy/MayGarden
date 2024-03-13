@@ -11,6 +11,7 @@
 <div style="margin: 10px 0px; position: absolute; right: 0">
     <h1>List of accounts</h1>
 
+
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalAdd" style="font-weight:bold; padding: 10px 10px; margin-bottom: 10px; background: #0099FF; color:white; outline:none; border-radius: 10px;">
         <a style="text-decoration: none"> Create </a>
     </button>
@@ -74,7 +75,7 @@
                 <th style="border-right: 1px solid #333;">
                     UserName
                 </th>
-                <th style="border-right: 1px solid #333;">
+
                     FullName
                 </th>
                 <th>
@@ -83,6 +84,8 @@
             </tr>
         </thead>
         <tbody style="text-align:center; border: 1px solid #333">
+
+
             <c:forEach items="${listA}" var="Accounts">
                 <tr>
                     <td style="border-right: 1px solid #333; border-bottom: 1px solid #333;">${Accounts.getUserId()}</td>
@@ -95,6 +98,7 @@
                     </td>
                 </tr>
             </c:forEach>
+
         </tbody>
     </table>
 </div>

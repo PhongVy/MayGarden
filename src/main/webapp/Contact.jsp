@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.jsp">Home</a></span> <span>Contact us</span></p>
+                <p class="breadcrumbs"><span class="mr-2"><a href="Home">Home</a></span> <span>Contact us</span></p>
                 <h1 class="mb-0 bread">Contact us</h1>
             </div>
         </div>
@@ -29,12 +29,12 @@
             </div>
             <div class="col-md-3 d-flex">
                 <div class="info bg-white p-4">
-                    <p><span>Phone:</span> <a href="tel://1234567920">+ 8359 857 442</a></p>
+                    <p><span>Phone:</span> <a href="tel://1234567920">+ 836 395 2512</a></p>
                 </div>
             </div>
             <div class="col-md-3 d-flex">
                 <div class="info bg-white p-4">
-                    <p><span>Email:</span> <a href="mailto:info@yoursite.com">group6@gmail.com</a></p>
+                    <p><span>Email:</span> <a href="mailto:info@yoursite.com">admin@gmail.com</a></p>
                 </div>
             </div>
             <div class="col-md-3 d-flex">
@@ -48,19 +48,20 @@
 
                 <form action="FeedbackY" class="bg-white p-5 contact-form"  method="post">
                     <p class="text-danger" >${mess}</p>
-                    
-                        <input name="name" required type="text" class="form-control form-group" style="margin-top: 20px" placeholder="Your Name">
-                    
-      
-                        <input name="email" required type="text" class="form-control form-group"  placeholder="Your Email">
-                  
-                        <textarea name="message" required id="" cols="30" rows="7" class="form-control form-group" placeholder="Message"></textarea>
-                    
-                        <button type="submit" value="FeedbackY" style="margin-top: 50px; color:white" class="form-group btn btn-primary py-3 px-5">Send Message</button>
-                    
+
+                    <input name="name" required type="text" class="form-control form-group" style="margin-top: 20px" placeholder="Your Name">
+
+
+                    <input name="email" required type="text" class="form-control form-group"  placeholder="Your Email">
+
+                    <textarea name="message" required cols="30" rows="7" class="form-control form-group" placeholder="Message"></textarea>
+
+                    <button type="submit" value="FeedbackY" style="margin-top: 50px; color:white" class="form-group btn btn-primary py-3 px-5"data-toggle="modal" data-target="#myModal">Send Message</button>
+
                 </form>
 
             </div>
+
 
             <div class="col-md-6 d-flex">
                 <div class="bg-white" style="width: 100%">

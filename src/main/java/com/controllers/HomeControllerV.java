@@ -79,14 +79,5 @@ public class HomeControllerV extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    public static void main(String[] args) {
-        ProductDAOV dao = new ProductDAOV();
-        List<Product> list = dao.getListProduct();
-        List<Categories> listCat = dao.getListCat();
-        
-
-        for (Categories o : listCat) {
-            System.out.println(o);
-        }
-    }
+    
 }
