@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Acer
+ * @author PC
  */
 public class DetailCategoryController extends HttpServlet {
    
@@ -29,6 +29,7 @@ public class DetailCategoryController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("CatId");
         CategoryDAOY dao = new CategoryDAOY();

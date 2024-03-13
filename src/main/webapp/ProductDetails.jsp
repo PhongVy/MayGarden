@@ -22,43 +22,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 mb-5 ftco-animate">
-                <a href="./assets_1/img/${detail.getProductImage()}" class="image-popup"><img src="./assets_1/img/${detail.getProductImage()}" class="img-fluid" alt="Colorlib Template"></a>
+                <a href="./assets_1/img/${detail.getProductImage()}" class="image-popup"><img src="./assets/images/${detail.getProductImage()}" class="img-fluid" alt="Colorlib Template"></a>
             </div>
             <div class="col-lg-6 product-details pl-md-5 ftco-animate">
                 <h3>${detail.getProductName()}</h3>
-                <div class="rating d-flex">
-                    <p class="text-left mr-4">
-                        <a href="#" class="mr-2">5.0</a>
-                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                    </p>
-                    <p class="text-left mr-4">
-                        <a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Rating</span></a>
-                    </p>
-                    <p class="text-left">
-                        <a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
-                    </p>
-                </div>
+                
                 <p class="price"><span>${detail.getPrice()} $</span></p>
-                <p>${detail.getDescription()}
+                <p>${detail.getShortDesc()}
                 </p>
                 <div class="row mt-4">
-                    <div class="col-md-6">
-                        <div class="form-group d-flex">
-                            <div class="select-wrap">
-                                <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                <select class="form-control">
-                                    <option value="">Small</option>
-                                    <option value="">Medium</option>
-                                    <option value="">Large</option>
-                                    <option value="">Extra Large</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="w-100"></div>
                     <div class="input-group col-md-6 d-flex mb-3">
                         <span class="input-group-btn mr-2">
@@ -97,7 +70,7 @@
             <c:forEach items="${listP}" var="pro">
             <div class="col-md-6 col-lg-3 ftco-animate">
                 <div class="product">
-                    <a href="Detail?pid=${pro.getProductId()}" class="img-prod"><img class="img-fluid" src="assets_1/img/${pro.getProductImage()}" alt="Colorlib Template">
+                    <a href="DetailY?pid=${pro.getProductId()}" class="img-prod"><img class="img-fluid" src="assets/images/${pro.getProductImage()}" alt="Colorlib Template">
                         <span class="status">30%</span>
                         <div class="overlay"></div>
                     </a>
@@ -105,7 +78,7 @@
                         <h3><a href="#">${pro.getProductName()}</a></h3>
                         <div class="d-flex">
                             <div class="pricing">
-                                <p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">${pro.getPrice()} $/kg</span></p>
+                                <p class="price"><span class="price-sale">${pro.getPrice()} $/kg</span></p>
                             </div>
                         </div>
                         <div class="bottom-area d-flex px-3">

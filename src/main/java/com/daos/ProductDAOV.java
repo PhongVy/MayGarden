@@ -66,7 +66,8 @@ public class ProductDAOV {
                         rs.getString(7),
                         rs.getDate(8),
                         rs.getInt(9),
-                        rs.getBoolean(10)));
+                        rs.getBoolean(10),
+                        rs.getBoolean(11)));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -92,7 +93,8 @@ public class ProductDAOV {
                         rs.getString(7),
                         rs.getDate(8),
                         rs.getInt(9),
-                        rs.getBoolean(10));
+                        rs.getBoolean(10),
+                        rs.getBoolean(11));
             }
         } catch (Exception e) {
         }

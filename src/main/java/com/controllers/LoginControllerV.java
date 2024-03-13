@@ -57,7 +57,7 @@ public class LoginControllerV extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        
+        processRequest(request, response);
     } 
 
     /** 
@@ -70,8 +70,7 @@ public class LoginControllerV extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        
-            String user = request.getParameter("username");
+        String user = request.getParameter("username");
             String pass = request.getParameter("password");
             String md5 = MD5.getMd5(pass);
             LoginDAOV loginDAO = new LoginDAOV();
@@ -85,7 +84,6 @@ public class LoginControllerV extends HttpServlet {
                 session.setMaxInactiveInterval(600);
                 response.sendRedirect("index.jsp ");
             } 
-            //HttpSession session = request.getSession();
     }
 
     /** 

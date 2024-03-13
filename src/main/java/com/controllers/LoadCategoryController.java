@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Acer
+ * @author PC
  */
 public class LoadCategoryController extends HttpServlet {
    

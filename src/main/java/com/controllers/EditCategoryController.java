@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Acer
+ * @author PC
  */
 public class EditCategoryController extends HttpServlet {
    

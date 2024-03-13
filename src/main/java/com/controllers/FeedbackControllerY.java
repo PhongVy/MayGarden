@@ -54,7 +54,7 @@ public class FeedbackControllerY extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        
+        processRequest(request, response);
     } 
 
     /** 
@@ -75,7 +75,6 @@ public class FeedbackControllerY extends HttpServlet {
             dao.fb(email, username, message);
             request.setAttribute("mess", "Thank you for your comments!!!");
             request.getRequestDispatcher("Contact.jsp").forward(request, response);
-            
     }
 
     /** 

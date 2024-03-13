@@ -1,27 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>LoginControllerV</servlet-name>
-        <servlet-class>com.controllers.LoginControllerV</servlet-class>
+        <servlet-name>AccountController</servlet-name>
+        <servlet-class>com.controllers.AccountController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>RegisterControllerV</servlet-name>
-        <servlet-class>com.controllers.RegisterControllerV</servlet-class>
+        <servlet-name>AddAccountController</servlet-name>
+        <servlet-class>com.controllers.AddAccountController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LogoutController</servlet-name>
-        <servlet-class>com.controllers.LogoutControllerV</servlet-class>
+        <servlet-name>AddCategoryController</servlet-name>
+        <servlet-class>com.controllers.AddCategoryController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SearchController</servlet-name>
-        <servlet-class>com.controllers.SearchController</servlet-class>
+        <servlet-name>AdminProductY</servlet-name>
+        <servlet-class>com.controllers.AdminProductY</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CategoryController</servlet-name>
+        <servlet-class>com.controllers.CategoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CategoryControllerY</servlet-name>
+        <servlet-class>com.controllers.CategoryControllerY</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreateProduct</servlet-name>
+        <servlet-class>com.controllers.CreateProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteAccountController</servlet-name>
+        <servlet-class>com.controllers.DeleteAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteCategoryController</servlet-name>
+        <servlet-class>com.controllers.DeleteCategoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteProductY</servlet-name>
+        <servlet-class>com.controllers.DeleteProductY</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailAccountController</servlet-name>
+        <servlet-class>com.controllers.DetailAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailCategoryController</servlet-name>
+        <servlet-class>com.controllers.DetailCategoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailProductAdmin</servlet-name>
+        <servlet-class>com.controllers.DetailProductAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailProductProductControllerY</servlet-name>
+        <servlet-class>com.controllers.DetailProductProductControllerY</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditAccountController</servlet-name>
+        <servlet-class>com.controllers.EditAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditCategoryController</servlet-name>
+        <servlet-class>com.controllers.EditCategoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditProductAdmin</servlet-name>
+        <servlet-class>com.controllers.EditProductAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FeedbackControllerY</servlet-name>
+        <servlet-class>com.controllers.FeedbackControllerY</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>HomeControllerV</servlet-name>
         <servlet-class>com.controllers.HomeControllerV</servlet-class>
     </servlet>
     <servlet>
-
+        <servlet-name>LoadAccountController</servlet-name>
+        <servlet-class>com.controllers.LoadAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadCategoryController</servlet-name>
+        <servlet-class>com.controllers.LoadCategoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadProductController</servlet-name>
+        <servlet-class>com.controllers.LoadProductController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginControllerV</servlet-name>
+        <servlet-class>com.controllers.LoginControllerV</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutControllerV</servlet-name>
+        <servlet-class>com.controllers.LogoutControllerV</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>OrderAdminV</servlet-name>
         <servlet-class>com.controllers.OrderAdminV</servlet-class>
     </servlet>
@@ -30,123 +105,114 @@
         <servlet-class>com.controllers.ProductController</servlet-class>
     </servlet>
     <servlet>
-
         <servlet-name>ProductControllerY</servlet-name>
         <servlet-class>com.controllers.ProductControllerY</servlet-class>
     </servlet>
     <servlet>
-
-
-        <servlet-name>AccountController</servlet-name>
-        <servlet-class>com.controllers.AccountController</servlet-class>
-    </servlet>
-    <servlet>
-
-        <servlet-name>CategoryControllerV</servlet-name>
-        <servlet-class>com.controllers.CategoryControllerV</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>FeedbackControllerY</servlet-name>
-        <servlet-class>com.controllers.FeedbackControllerY</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AdminProductY</servlet-name>
-        <servlet-class>com.controllers.AdminProductY</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DeleteProduct</servlet-name>
-        <servlet-class>com.controllers.DeleteProduct</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CreateProduct</servlet-name>
-        <servlet-class>com.controllers.CreateProduct</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>EditProductAdmin</servlet-name>
-        <servlet-class>com.controllers.EditProductAdmin</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DetailProductAdmin</servlet-name>
-        <servlet-class>com.controllers.DetailProductAdmin</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>LoadProductController</servlet-name>
-        <servlet-class>com.controllers.LoadProductController</servlet-class>
-
-        <servlet-name>CategoryController</servlet-name>
-        <servlet-class>com.controllers.CategoryController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DeleteAccountController</servlet-name>
-        <servlet-class>com.controllers.DeleteAccountController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AddAccountController</servlet-name>
-        <servlet-class>com.controllers.AddAccountController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DeleteCategoryController</servlet-name>
-        <servlet-class>com.controllers.DeleteCategoryController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AddCategoryController</servlet-name>
-        <servlet-class>com.controllers.AddCategoryController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DetailAccountController</servlet-name>
-        <servlet-class>com.controllers.DetailAccountController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>LoadAccountController</servlet-name>
-        <servlet-class>com.controllers.LoadAccountController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>EditAccountController</servlet-name>
-        <servlet-class>com.controllers.EditAccountController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DetailCategoryController</servlet-name>
-        <servlet-class>com.controllers.DetailCategoryController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>LoadCategoryController</servlet-name>
-        <servlet-class>com.controllers.LoadCategoryController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>EditCategoryController</servlet-name>
-        <servlet-class>com.controllers.EditCategoryController</servlet-class>
-
-        <servlet-name>CategoryControllerY</servlet-name>
-        <servlet-class>com.controllers.CategoryControllerY</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DetailProductProductControllerY</servlet-name>
-        <servlet-class>com.controllers.DetailProductProductControllerY</servlet-class>
-
-
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginControllerV</servlet-name>
-        <url-pattern>/Login</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>RegisterControllerV</servlet-name>
-        <url-pattern>/Register</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LogoutController</servlet-name>
-        <url-pattern>/Logout</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
+        <servlet-class>com.controllers.RegisterControllerV</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>SearchController</servlet-name>
-        <url-pattern>/Search</url-pattern>
+        <servlet-class>com.controllers.SearchController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AccountController</servlet-name>
+        <url-pattern>/Account</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddAccountController</servlet-name>
+        <url-pattern>/Add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCategoryController</servlet-name>
+        <url-pattern>/AddCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminProductY</servlet-name>
+        <url-pattern>/AdminProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CategoryController</servlet-name>
+        <url-pattern>/Category</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CategoryControllerY</servlet-name>
+        <url-pattern>/CategoryY</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateProduct</servlet-name>
+        <url-pattern>/CreateProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteAccountController</servlet-name>
+        <url-pattern>/Delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteCategoryController</servlet-name>
+        <url-pattern>/DeleteCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteProductY</servlet-name>
+        <url-pattern>/DeleteProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailAccountController</servlet-name>
+        <url-pattern>/Detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailCategoryController</servlet-name>
+        <url-pattern>/DetailCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailProductAdmin</servlet-name>
+        <url-pattern>/DetailProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailProductProductControllerY</servlet-name>
+        <url-pattern>/DetailY</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditAccountController</servlet-name>
+        <url-pattern>/Edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditCategoryController</servlet-name>
+        <url-pattern>/EditCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditProductAdmin</servlet-name>
+        <url-pattern>/EditProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FeedbackControllerY</servlet-name>
+        <url-pattern>/FeedbackY</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>HomeControllerV</servlet-name>
         <url-pattern>/Home</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-
+        <servlet-name>LoadAccountController</servlet-name>
+        <url-pattern>/Load</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadCategoryController</servlet-name>
+        <url-pattern>/LoadCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadProductController</servlet-name>
+        <url-pattern>/LoadProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginControllerV</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutControllerV</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>OrderAdminV</servlet-name>
         <url-pattern>/Order</url-pattern>
     </servlet-mapping>
@@ -155,106 +221,19 @@
         <url-pattern>/Product</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-
         <servlet-name>ProductControllerY</servlet-name>
-        <url-pattern>/Product</url-pattern>
+        <url-pattern>/ProductY</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-
-        <servlet-name>AccountController</servlet-name>
-        <url-pattern>/Account</url-pattern>
+        <servlet-name>RegisterControllerV</servlet-name>
+        <url-pattern>/Register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-
-        <servlet-name>CategoryControllerV</servlet-name>
-        <url-pattern>/Category</url-pattern>
+        <servlet-name>SearchController</servlet-name>
+        <url-pattern>/Search</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>FeedbackControllerY</servlet-name>
-        <url-pattern>/FeedbackY</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AdminProductY</servlet-name>
-        <url-pattern>/AdminProduct</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DeleteProduct</servlet-name>
-        <url-pattern>/DeleteProduct</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CreateProduct</servlet-name>
-        <url-pattern>/CreateProduct</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EditProductAdmin</servlet-name>
-        <url-pattern>/EditProduct</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DetailProductAdmin</servlet-name>
-        <url-pattern>/DetailProduct</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LoadProductController</servlet-name>
-        <url-pattern>/LoadProduct</url-pattern>
-    </servlet-mapping>
-
-        <servlet-name>CategoryController</servlet-name>
-        <url-pattern>/Category</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DeleteAccountController</servlet-name>
-        <url-pattern>/Delete</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddAccountController</servlet-name>
-        <url-pattern>/Add</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DeleteCategoryController</servlet-name>
-        <url-pattern>/DeleteCategory</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddCategoryController</servlet-name>
-        <url-pattern>/AddCategory</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DetailAccountController</servlet-name>
-        <url-pattern>/Detail</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LoadAccountController</servlet-name>
-        <url-pattern>/Load</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EditAccountController</servlet-name>
-        <url-pattern>/Edit</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DetailCategoryController</servlet-name>
-        <url-pattern>/DetailCategory</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LoadCategoryController</servlet-name>
-        <url-pattern>/LoadCategory</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EditCategoryController</servlet-name>
-        <url-pattern>/EditCategory</url-pattern>
-    </servlet-mapping>
-
-        <servlet-name>CategoryControllerY</servlet-name>
-        <url-pattern>/Category</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DetailProductProductControllerY</servlet-name>
-        <url-pattern>/Detail</url-pattern>
-    </servlet-mapping>
-
-
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
     <welcome-file-list>
         <welcome-file>Home</welcome-file>
