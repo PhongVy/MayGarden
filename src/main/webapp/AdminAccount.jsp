@@ -38,7 +38,7 @@
                         </div>
                         <div class="form-group">
                             <label for="fullname">Fullname:</label>
-                            <input required name="Fullname" type="text" class="form-control" ">
+                            <input required name="Fullname" type="text" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="address">Address:</label>
@@ -75,7 +75,7 @@
                 <th style="border-right: 1px solid #333;">
                     UserName
                 </th>
-
+                <th style="border-right: 1px solid #333;">
                     FullName
                 </th>
                 <th>

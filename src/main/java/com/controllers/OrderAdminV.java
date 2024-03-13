@@ -6,10 +6,7 @@
 package com.controllers;
 
 import com.daos.OrderDAOV;
-import com.daos.ProductDAOV;
-import com.models.Categories;
 import com.models.Order;
-import com.models.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -76,7 +73,7 @@ public class OrderAdminV extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        
+        processRequest(request, response);
     }
 
     /** 

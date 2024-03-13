@@ -6,9 +6,9 @@
 package com.controllers;
 
 import com.daos.ProductDAOV;
-import com.models.Categories;
 import com.models.Product;
 import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  *
- * @author yentk
+ * @author PC
  */
 public class DetailProductProductControllerY extends HttpServlet {
    
@@ -31,15 +31,18 @@ public class DetailProductProductControllerY extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String id = request.getParameter("pid");
-        ProductDAOV dao = new ProductDAOV();
-        Product p = dao.getProductById(id);
-        List<Product> pr = dao.getAllProduct();
-        
-        request.setAttribute("detail", p);
-        request.setAttribute("listP", pr);
-        request.getRequestDispatcher("ProductDetails.jsp").forward(request, response);
-
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet DetailProductProductControllerY</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet DetailProductProductControllerY at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -53,7 +56,14 @@ public class DetailProductProductControllerY extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        String id = request.getParameter("pid");
+        ProductDAOV dao = new ProductDAOV();
+        Product p = dao.getProductById(id);
+        List<Product> pr = dao.getAllProduct();
+        
+        request.setAttribute("detail", p);
+        request.setAttribute("listP", pr);
+        request.getRequestDispatcher("ProductDetails.jsp").forward(request, response);
     } 
 
     /** 

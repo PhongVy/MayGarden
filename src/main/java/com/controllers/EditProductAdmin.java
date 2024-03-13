@@ -6,7 +6,6 @@
 package com.controllers;
 
 import com.daos.AdminProductDAO;
-import com.models.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
