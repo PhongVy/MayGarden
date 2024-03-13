@@ -4,25 +4,22 @@
  */
 package com.controllers;
 
-import com.daos.RegisterDAO;
-import com.models.Accounts;
+import com.daos.ProductDAOV;
+import com.models.Categories;
+import com.models.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.List;
 
 /**
  *
  * @author PC
  */
-public class RegisterControllerV extends HttpServlet {
+public class CategoryControllerV extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +38,10 @@ public class RegisterControllerV extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet RegisterControllerV</title>");
+            out.println("<title>Servlet CategoryControllerV</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet RegisterControllerV at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CategoryControllerV at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -62,7 +59,16 @@ public class RegisterControllerV extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String catId = request.getParameter("CatId");//lay Cat
+
+        ProductDAOV dao = new ProductDAOV();
+        List<Product> list = dao.getProductByCat(catId);
+        List<Categories> listCat = dao.getListCat();
+
+        request.setAttribute("listC", listCat);
+
+        request.setAttribute("listP", list);
+        request.getRequestDispatcher("Product.jsp").forward(request, response);
     }
 
     /**
@@ -76,29 +82,7 @@ public class RegisterControllerV extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String user = request.getParameter("user");
-        String pass = request.getParameter("pass");
-        String repass = request.getParameter("repass");
-        String email = request.getParameter("email");
-        String fullname = request.getParameter("fullname");
-        String phoneValue = request.getParameter("phone");
-        String address = request.getParameter("address");
-
-        if (!pass.equals(repass)) {
-            request.setAttribute("mess", "Confirm password not match!");
-            request.getRequestDispatcher("Register.jsp").forward(request, response);
-        } else {
-            RegisterDAO accDao = new RegisterDAO();
-            Accounts a = accDao.checkRegister(user);
-
-            if (a == null) {
-                accDao.register(user, pass, fullname, address, phoneValue, email);
-                response.sendRedirect("Login.jsp");
-            } else {
-                request.setAttribute("mess", "Account has been registered!");
-                request.getRequestDispatcher("Register.jsp").forward(request, response);
-            }
-        }
+        processRequest(request, response);
     }
 
     /**

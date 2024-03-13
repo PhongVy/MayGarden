@@ -10,7 +10,6 @@ import com.models.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +40,8 @@ public class ProductDAOV {
                         rs.getString(7),
                         rs.getDate(8),
                         rs.getInt(9),
-                        rs.getBoolean(10)));
+                        rs.getBoolean(10),
+                        rs.getBoolean(11)));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -68,7 +68,8 @@ public class ProductDAOV {
                         rs.getString(7),
                         rs.getDate(8),
                         rs.getInt(9),
-                        rs.getBoolean(10)));
+                        rs.getBoolean(10),
+                        rs.getBoolean(11)));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -88,6 +89,33 @@ public class ProductDAOV {
                 list.add(new Categories(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3)));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    
+    public List<Product> getProductByCat(String CatId){
+        List<Product> list = new ArrayList<>();
+        String query = "select * from Products where CatId = ?";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, CatId);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getFloat(6),
+                        rs.getString(7),
+                        rs.getDate(8),
+                        rs.getInt(9),
+                        rs.getBoolean(10),
+                        rs.getBoolean(11)));
             }
         } catch (Exception e) {
             e.printStackTrace();

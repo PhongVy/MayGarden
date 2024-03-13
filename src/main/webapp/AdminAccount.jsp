@@ -12,8 +12,9 @@
     <h1>List of accounts</h1>
 
     <p>
-<!--        <a asp-action="Create" style="font-weight:bold; padding: 10px 10px; background: #81c408; color:white; outline:none; border-radius: 30px; text-decoration:none" class="">Create New</a>-->
+                <a style="font-weight:bold; padding: 10px 10px; background: #81c408; color:white; outline:none; border-radius: 30px; text-decoration:none" >Create New</a>
     </p>
+    
     <table style="width: 1200px; border: 1px solid #333">
         <thead style="border: 1px solid #333; background:#81c408; color:#fff; height:50px">
             <tr>
@@ -22,9 +23,6 @@
                 </th>
                 <th>
                     UserName
-                </th>
-                <th>
-                    Password
                 </th>
                 <th>
                     FullName
@@ -45,24 +43,26 @@
             </tr>
         </thead>
         <tbody style="text-align:center; border: 1px solid #333">
-            <c:forEach items="${listA}" var="Accounts">
-                <tr>
+<c:forEach items="${listA}" var="Accounts">
+            <tr>
+                
                     <td>${Accounts.getUserId()}</td>
                     <td>${Accounts.getUserName()}</td>
-                    <td>${Accounts.getPasword()}</td> 
                     <td>${Accounts.getFullName()}</td>
 
                     <td>${Accounts.getAddress()}</td> 
                     <td>${Accounts.getPhone()}</td> 
 
                     <td>${Accounts.getEmail()}</td>
-<!--                    <td style="border: 1px solid #333">
-                        <a asp-action="Edit" asp-route-id="@item.UserId" style="padding: 3px; background: #0099FF; text-decoration: none">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.UserId" style="padding: 3px; background: #33FF33; text-decoration: none">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.UserId" style="padding: 3px; background: red; text-decoration: none">Delete</a>-->
-<!--                    </td>-->
-                </tr>
-            </c:forEach>
+                    <td>${Accounts.isIsAdmin()}</td>
+                                        <td style="border: 1px solid #333">
+                                            <a style="padding: 3px; background: #0099FF; text-decoration: none">Edit</a> |
+                                            <a style="padding: 3px; background: #33FF33; text-decoration: none">Details</a> |
+                                            <a style="padding: 3px; background: red; text-decoration: none">Delete</a>
+                                        </td>
+                
+            </tr>
+</c:forEach>
         </tbody>
     </table>
 </div>

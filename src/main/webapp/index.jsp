@@ -21,9 +21,8 @@
                         <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
                             <div class="col-md-12 ftco-animate text-center">
-                                <h1 class="mb-2">We serve Fresh Vegestables &amp; Fruits</h1>
+                                <h1 class="mb-2">Fruit and vegetable stores</h1>
                                 <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
-                                <p><a href="#" class="btn btn-primary">View Details</a></p>
                             </div>
 
                         </div>
@@ -38,7 +37,6 @@
                             <div class="col-sm-12 ftco-animate text-center">
                                 <h1 class="mb-2">100% Fresh &amp; Organic Foods</h1>
                                 <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
-                                <p><a href="#" class="btn btn-primary">View Details</a></p>
                             </div>
 
                         </div>
@@ -101,22 +99,21 @@
         <section class="ftco-section ftco-category ftco-no-pt">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-6 order-md-last align-items-stretch d-flex">
-                                <div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image: url(./assets/images/category.jpg);">
-                                    <div class="text text-center" style="margin-top: 150px;">
+                    <div class="">
+                        <div class="">
+                            <div class="order-md-last align-items-stretch d-flex" style="margin-bottom: 25px">
+                                <div class="category-wrap-2 ftco-animate img align-self-stretch d-flex">
+                                    <div class="text text-center" style="margin-top: 100px;">
                                         <h1>Vegetables</h1>
-                                        <h3>Protect the health of every home</h3>
-                                        <p><a href="Product.jsp" class="btn btn-primary">Shop now</a></p>
+                                        <h3>Product Categories</h3>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div id="owl-demo" class="owl-carousel owl-theme" style="">
                                 <c:forEach var="Categories" items="${listC}">
-                                    <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(./assets/images/category-1.jpg);">
+                                    <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end item" style="background-image: url(./assets/images/category-1.jpg);">
                                         <div class="text px-3 py-1">
-                                            <h2 class="mb-0"><a href="#">${Categories.getCatName()}</a></h2>
+                                            <h2 class="mb-0"><a href="Category?CatId=${Categories.getCatId()}">${Categories.getCatName()}</a></h2>
                                         </div>
                                     </div>
                                 </c:forEach>
@@ -171,14 +168,16 @@
             </div>
         </section>
 
-        <section class="ftco-section img" style="background-image: url(./assets/images/bg_3.jpg);">
+        <section class="ftco-section img" style="background-image: url(./assets/images/bg_3.jpg); margin-bottom: 150px ">
             <div class="container">
                 <div class="row justify-content-end">
                     <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
                         <span class="subheading">Best Price For You</span>
-                        <h2 class="mb-4">Deal of the day</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                        <h2 class="mb-4">Quality is always <br>the best</h2>
+                        <p>MayGarden is not just a shopping destination but also a valuable source of information on healthy eating and organic living. With a mission to create a community passionate about clean and organic food, 
+                            MayGarden aims to contribute to enhancing the quality of life for everyone by providing high-quality products and useful nutritional information.</p>
 
+                        <p><a href="Product" class="btn btn-primary">Shop now</a></p>
                     </div>   		
                 </div>
         </section>
@@ -189,6 +188,22 @@
 
 
         <jsp:include page="Footer.jsp" />
+        <script>
+            $(document).ready(function () {
+
+                $("#owl-demo").owlCarousel({
+
+                    autoPlay: true, //Set AutoPlay to 3 seconds
+                    goToFirst: true,
+
+                    items: 2,
+                    itemsDesktop: [1199, 3],
+                    itemsDesktopSmall: [979, 3]
+
+                });
+
+            });
+        </script>
 
     </body>
 </html>

@@ -20,6 +20,50 @@
         <servlet-name>HomeControllerV</servlet-name>
         <servlet-class>com.controllers.HomeControllerV</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>OrderAdminV</servlet-name>
+        <servlet-class>com.controllers.OrderAdminV</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductController</servlet-name>
+        <servlet-class>com.controllers.ProductController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AccountController</servlet-name>
+        <servlet-class>com.controllers.AccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CategoryControllerV</servlet-name>
+        <servlet-class>com.controllers.CategoryControllerV</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FeedbackControllerY</servlet-name>
+        <servlet-class>com.controllers.FeedbackControllerY</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminProductY</servlet-name>
+        <servlet-class>com.controllers.AdminProductY</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteProduct</servlet-name>
+        <servlet-class>com.controllers.DeleteProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreateProduct</servlet-name>
+        <servlet-class>com.controllers.CreateProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditProductAdmin</servlet-name>
+        <servlet-class>com.controllers.EditProductAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailProductAdmin</servlet-name>
+        <servlet-class>com.controllers.DetailProductAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadProductController</servlet-name>
+        <servlet-class>com.controllers.LoadProductController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginControllerV</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -39,6 +83,50 @@
     <servlet-mapping>
         <servlet-name>HomeControllerV</servlet-name>
         <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderAdminV</servlet-name>
+        <url-pattern>/Order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductController</servlet-name>
+        <url-pattern>/Product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountController</servlet-name>
+        <url-pattern>/Account</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CategoryControllerV</servlet-name>
+        <url-pattern>/Category</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FeedbackControllerY</servlet-name>
+        <url-pattern>/FeedbackY</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminProductY</servlet-name>
+        <url-pattern>/AdminProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteProduct</servlet-name>
+        <url-pattern>/DeleteProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateProduct</servlet-name>
+        <url-pattern>/CreateProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditProductAdmin</servlet-name>
+        <url-pattern>/EditProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailProductAdmin</servlet-name>
+        <url-pattern>/DetailProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadProductController</servlet-name>
+        <url-pattern>/LoadProduct</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

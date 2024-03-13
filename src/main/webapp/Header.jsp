@@ -76,19 +76,21 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.jsp" class="nav-link" style="font-size: 16px">Home</a></li>
-
-                    <li class="nav-item"><a href="Product.jsp" class="nav-link" style="font-size: 16px">Product</a></li>
+                    <!-- Menu -->
+                    <li class="nav-item"><a href="Home" class="nav-link" style="font-size: 16px">Home</a></li>
+                    <li class="nav-item"><a href="Product" class="nav-link" style="font-size: 16px">Product</a></li>
                     <li class="nav-item"><a href="About.jsp" class="nav-link" style="font-size: 16px">About us</a></li>
                     <li class="nav-item"><a href="Contact.jsp" class="nav-link" style="font-size: 16px">Contact</a></li>
                     
                     <!-- Search -->
-                    <li class="d-flex m-3 me-0">
-                        <button class="border-0  bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal" style="outline: none; cursor: pointer"><i class="fas fa-search" style="width: 20px; color: black;"></i></button>
+                    <li class="d-flex me-0">
+                        <button class="border-0  bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal" style="outline: none; cursor: pointer"><i class="fas fa-search" style=" color: black;"></i></button>
                     </li>
                     
                     <!-- Cart -->
-                    <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[0]</a></li>
+                    <li class="nav-item cta-colored"><a href="cart.html" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[0]</a></li>
+                    
+                    <!<!-- Accounts -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="margin-top: 3px" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-account_circle" style="font-size: 16px"></span></a>
                         <c:if test="${sessionScope.acc == null}">
