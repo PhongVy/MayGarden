@@ -25,6 +25,7 @@
         <servlet-class>com.controllers.ProductControllerY</servlet-class>
     </servlet>
     <servlet>
+
         <servlet-name>AccountController</servlet-name>
         <servlet-class>com.controllers.AccountController</servlet-class>
     </servlet>
@@ -71,6 +72,14 @@
     <servlet>
         <servlet-name>EditCategoryController</servlet-name>
         <servlet-class>com.controllers.EditCategoryController</servlet-class>
+
+        <servlet-name>CategoryControllerY</servlet-name>
+        <servlet-class>com.controllers.CategoryControllerY</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailProductProductControllerY</servlet-name>
+        <servlet-class>com.controllers.DetailProductProductControllerY</servlet-class>
+
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginControllerV</servlet-name>
@@ -97,6 +106,7 @@
         <url-pattern>/Product</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/Account</url-pattern>
     </servlet-mapping>
@@ -144,6 +154,15 @@
         <servlet-name>EditCategoryController</servlet-name>
         <url-pattern>/EditCategory</url-pattern>
     </servlet-mapping>
+
+        <servlet-name>CategoryControllerY</servlet-name>
+        <url-pattern>/Category</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailProductProductControllerY</servlet-name>
+        <url-pattern>/Detail</url-pattern>
+    </servlet-mapping>
+
     <session-config>
         <session-timeout>
             30

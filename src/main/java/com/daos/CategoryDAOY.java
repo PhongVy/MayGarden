@@ -107,4 +107,39 @@ public class CategoryDAOY {
 //            System.out.println(o);
 //        }
 //    }
+  
+    public List<Product> getCatById(String CatId) {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from Products where CatId = ?";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, CatId);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getFloat(6),
+                        rs.getString(7),
+                        rs.getDate(8),
+                        rs.getInt(9),
+                        rs.getBoolean(10)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+    public static void main(String[] args) {
+        CategoryDAOY dao = new CategoryDAOY();
+        List<Product> list = dao.getCatById("1"); // Thay "yourCatId" bằng một cat ID hợp lệ trong cơ sở dữ liệu của bạn
+
+        for (Product o : list) {
+            System.out.println(o);
+        }
+    }
+
 }

@@ -74,6 +74,30 @@ public class ProductDAOV {
 
         return list;
     }
+    
+    public Product getProductById(String id) {
+        String query = "select * from Products where ProductId = ?";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getFloat(6),
+                        rs.getString(7),
+                        rs.getDate(8),
+                        rs.getInt(9),
+                        rs.getBoolean(10));
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
 
     public List<Product> searchProduct(String txtSearch) {
         List<Product> list = new ArrayList<>();
