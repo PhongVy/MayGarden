@@ -4,51 +4,81 @@
  */
 package com.models;
 
+import java.sql.Date;
+
 /**
  *
  * @author yentk
  */
 public class Feedback {
-    private String username;
-    private String email;
-    private String message;
+     private int FeedbackId;
+    private String UserName, Content, Type;
+    private Date FeedBackDate;
     
     public Feedback(){}
 
-    public String getUsername() {
-        return username;
+    public Feedback(int FeedbackId, String UserName, String Content, String Type, Date FeedBackDate) {
+        this.FeedbackId = FeedbackId;
+        this.UserName = UserName;
+        this.Content = Content;
+        this.Type = Type;
+        this.FeedBackDate = FeedBackDate;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public Feedback(String UserName, String Content, String Type, Date FeedBackDate) {
+        this.UserName = UserName;
+        this.Content = Content;
+        this.Type = Type;
+        this.FeedBackDate = FeedBackDate;
     }
 
-    public String getEmail() {
-        return email;
+    public int getFeedbackId() {
+        return FeedbackId;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setFeedbackId(int FeedbackId) {
+        this.FeedbackId = FeedbackId;
     }
 
-    public String getMessage() {
-        return message;
+    public String getUserName() {
+        return UserName;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setUserName(String UserName) {
+        this.UserName = UserName;
     }
 
-    public Feedback(String username, String email, String message) {
-        this.username = username;
-        this.email = email;
-        this.message = message;
+    public String getContent() {
+        return Content;
+    }
+
+    public void setContent(String Content) {
+        this.Content = Content;
+    }
+
+    public String getType() {
+        return Type;
+    }
+
+    public void setType(String Type) {
+        this.Type = Type;
+    }
+
+    public Date getFeedBackDate() {
+        return FeedBackDate;
+    }
+
+    public void setFeedBackDate(Date FeedBackDate) {
+        this.FeedBackDate = FeedBackDate;
     }
 
     @Override
     public String toString() {
-        return "Feedback{" + "username=" + username + ", email=" + email + ", message=" + message + '}';
+        return "Feedback{" + "FeedbackId=" + FeedbackId + ", UserName=" + UserName + ", Content=" + Content + ", Type=" + Type + ", FeedBackDate=" + FeedBackDate + '}';
     }
+
     
+
+   
     
 }

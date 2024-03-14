@@ -60,22 +60,23 @@
 <c:if test="${sessionScope.acc == null}">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html" style="font-size: 24px">MayGarden</a>
+            <a class="navbar-brand" href="index.jsp" style="font-size: 24px">MayGarden</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link" style="font-size: 16px">Home</a></li>
+                    <li class="nav-item active"><a href="index.jsp" class="nav-link" style="font-size: 16px">Home</a></li>
 
-                    <li class="nav-item"><a href="about.html" class="nav-link" style="font-size: 16px">Product</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link" style="font-size: 16px">About us</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link" style="font-size: 16px">Contact</a></li>
+                    <li class="nav-item"><a href="Product.jsp" class="nav-link" style="font-size: 16px">Product</a></li>
+                    <li class="nav-item"><a href="About.jsp" class="nav-link" style="font-size: 16px">About us</a></li>
+                    <li class="nav-item"><a href="Contact.jsp" class="nav-link" style="font-size: 16px">Contact</a></li>
+                    <li class="nav-item"><a href="FeedBack.jsp" class="nav-link" style="font-size: 16px">Feedback</a></li>
                     <li class="d-flex m-3 me-0">
                         <button class="border-0  bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal" style="outline: none; cursor: pointer"><i class="fas fa-search" style="width: 20px; color: black;"></i></button>
                     </li>
-                    <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[0]</a></li>
+                    <li class="nav-item cta cta-colored"><a href="Cart.jsp" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[0]</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="margin-top: 3px" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-account_circle" style="font-size: 16px"></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -91,19 +92,20 @@
 <c:if test="${sessionScope.acc != null && sessionScope.acc.isAdmin eq false}">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html" style="font-size: 24px">MayGarden</a>
+            <a class="navbar-brand" href="index.jsp" style="font-size: 24px">MayGarden</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link" style="font-size: 16px">Home</a></li>
+                    <li class="nav-item active"><a href="index.jsp" class="nav-link" style="font-size: 16px">Home</a></li>
 
-                    <li class="nav-item"><a href="about.html" class="nav-link" style="font-size: 16px">Product</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link" style="font-size: 16px">About us</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link" style="font-size: 16px">Contact</a></li>
-                    <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[0]</a></li>
+                    <li class="nav-item"><a href="Product.jsp" class="nav-link" style="font-size: 16px">Product</a></li>
+                    <li class="nav-item"><a href="About.jsp" class="nav-link" style="font-size: 16px">About us</a></li>
+                    <li class="nav-item"><a href="Contact.jsp" class="nav-link" style="font-size: 16px">Contact</a></li>
+                    <li class="nav-item"><a href="FeedBack.jsp" class="nav-link" style="font-size: 16px">Feedback</a></li>
+                    <li class="nav-item cta cta-colored"><a href="Cart.jsp" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[0]</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="margin-top: 3px" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-account_circle" style="font-size: 16px"></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -119,19 +121,20 @@
 <c:if test="${sessionScope.acc.isAdmin eq true}">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html" style="font-size: 24px">MayGarden</a>
+            <a class="navbar-brand" href="index.jsp" style="font-size: 24px">MayGarden</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link" style="font-size: 16px">Home</a></li>
+                    <li class="nav-item active"><a href="index.jsp" class="nav-link" style="font-size: 16px">Home</a></li>
 
-                    <li class="nav-item"><a href="about.html" class="nav-link" style="font-size: 16px">Product</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link" style="font-size: 16px">About us</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link" style="font-size: 16px">Contact</a></li>
-                    <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[0]</a></li>
+                    <li class="nav-item"><a href="Product.jsp" class="nav-link" style="font-size: 16px">Product</a></li>
+                    <li class="nav-item"><a href="About.jsp" class="nav-link" style="font-size: 16px">About us</a></li>
+                    <li class="nav-item"><a href="Contact.jsp" class="nav-link" style="font-size: 16px">Contact</a></li>
+                    <li class="nav-item"><a href="AdminFeedBack.jsp" class="nav-link" style="font-size: 16px">Feedback</a></li>
+                    <li class="nav-item cta cta-colored"><a href="Cart.jsp" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[0]</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="margin-top: 3px" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-account_circle" style="font-size: 16px"></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">

@@ -5,13 +5,17 @@
 
 package com.controllers;
 
+import com.daos.FeedbackDAOY;
+import com.models.Feedback;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 /**
  *
@@ -46,8 +50,27 @@ public class FeedbackControllerY extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
-    } 
+        if (getUser(request, response) == null) {
+            response.sendRedirect(request.getContextPath() + "/login");
+        } else {
+            FeedbackDAOY c = new FeedbackDAOY();
+            ArrayList<Feedback> feedback = c.getAllFeedbacks();
+            request.setAttribute("feedback", feedback);
+            request.getRequestDispatcher("feedback.jsp").forward(request, response);
+        }
+        
+        
+    }
+    
+    private String getUser(HttpServletRequest request, HttpServletResponse response) {
+        Cookie cookie[] = request.getCookies();
+        for (Cookie o : cookie) {
+            if (o.getName().equals("admin")) {
+                return o.getValue();
+            }
+        }
+        return null;
+    }
 
     /** 
      * Handles the HTTP <code>POST</code> method.
