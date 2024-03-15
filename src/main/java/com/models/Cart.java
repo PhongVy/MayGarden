@@ -4,97 +4,92 @@
  */
 package com.models;
 
+import java.util.List;
+
 /**
  *
  * @author PC
  */
 public class Cart {
-    private int CartId;
-    private int UserId;
-    private int ProductId;
-    private String ProductName;
-    private String PorductImage;
-    private int Quantity;
-    private float TotalPrice;
-    private float ProductPrice;
+    private int cartId;
+    private int userId;
+    private int productId;
+   
+    private int quantity;
 
-    @Override
-    public String toString() {
-        return "Cart{" + "CartId=" + CartId + ", UserId=" + UserId + ", ProductId=" + ProductId + ", ProductName=" + ProductName + ", PorductImage=" + PorductImage + ", Quantity=" + Quantity + ", TotalPrice=" + TotalPrice + ", ProductPrice=" + ProductPrice + '}';
+    private List<Item> items;
+
+    public Cart() {
+    }
+
+    public Cart(int cartId, int userId, int productId, int quantity) {
+        this.cartId = cartId;
+        this.userId = userId;
+        this.productId = productId;
+      
+        this.quantity = quantity;
+    }
+    
+    
+
+    public Cart(int userId, int productId, int quantity) {
+        this.userId = userId;
+        this.productId = productId;
+        
+        this.quantity = quantity;
     }
 
     public int getCartId() {
-        return CartId;
+        return cartId;
     }
 
-    public void setCartId(int CartId) {
-        this.CartId = CartId;
+    public void setCartId(int cartId) {
+        this.cartId = cartId;
     }
+
+  
 
     public int getUserId() {
-        return UserId;
+        return userId;
     }
 
-    public void setUserId(int UserId) {
-        this.UserId = UserId;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public int getProductId() {
-        return ProductId;
+        return productId;
     }
 
-    public void setProductId(int ProductId) {
-        this.ProductId = ProductId;
+    public void setProductID(int productId) {
+        this.productId = productId;
     }
 
-    public String getProductName() {
-        return ProductName;
-    }
-
-    public void setProductName(String ProductName) {
-        this.ProductName = ProductName;
-    }
-
-    public String getPorductImage() {
-        return PorductImage;
-    }
-
-    public void setPorductImage(String PorductImage) {
-        this.PorductImage = PorductImage;
-    }
+    
 
     public int getQuantity() {
-        return Quantity;
+        return quantity;
     }
 
-    public void setQuantity(int Quantity) {
-        this.Quantity = Quantity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public float getTotalPrice() {
-        return TotalPrice;
+    public List<Item> getItems() {
+        return items;
     }
 
-    public void setTotalPrice(float TotalPrice) {
-        this.TotalPrice = TotalPrice;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
-    public float getProductPrice() {
-        return ProductPrice;
+    //Totalprice
+    public double getTotalPrice() {
+        double t = 0;
+        for (Item o : items) {
+            t += (o.getProductQuantity() * o.getProductPrice());
+        }
+        return t;
     }
-
-    public void setProductPrice(float ProductPrice) {
-        this.ProductPrice = ProductPrice;
-    }
-
-    public Cart(int CartId, int UserId, int ProductId, String ProductName, String PorductImage, int Quantity, float TotalPrice, float ProductPrice) {
-        this.CartId = CartId;
-        this.UserId = UserId;
-        this.ProductId = ProductId;
-        this.ProductName = ProductName;
-        this.PorductImage = PorductImage;
-        this.Quantity = Quantity;
-        this.TotalPrice = TotalPrice;
-        this.ProductPrice = ProductPrice;
-    }
+    
 }
