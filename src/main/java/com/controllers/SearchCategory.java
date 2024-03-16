@@ -5,22 +5,21 @@
 
 package com.controllers;
 
-import com.daos.LoginDAOV;
-import com.models.Accounts;
-import com.service.MD5;
+import com.daos.CategoryDAOY;
+import com.models.Categories;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  *
  * @author PC
  */
-public class LoginControllerV extends HttpServlet {
+public class SearchCategory extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -37,10 +36,10 @@ public class LoginControllerV extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginControllerV</title>");  
+            out.println("<title>Servlet SearchCategory</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginControllerV at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet SearchCategory at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -70,20 +69,12 @@ public class LoginControllerV extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String user = request.getParameter("username");
-            String pass = request.getParameter("password");
-            String md5 = MD5.getMd5(pass);
-            LoginDAOV loginDAO = new LoginDAOV();
-            Accounts a = loginDAO.checkLogin(user, pass);
-            if(a==null){
-                request.setAttribute("mess", "Wrong email or password!");
-                request.getRequestDispatcher("Login.jsp").forward(request, response);
-            }else {
-                HttpSession session = request.getSession();
-                session.setAttribute("acc", a);
-                session.setMaxInactiveInterval(1000000);
-                response.sendRedirect("index.jsp ");
-            } 
+        String txtSearch = request.getParameter("txt");
+        CategoryDAOY dao = new CategoryDAOY();
+        List<Categories> list = dao.searchCategory(txtSearch);
+
+        request.setAttribute("listC", list);
+        request.getRequestDispatcher("AdminCategory.jsp").forward(request, response);
     }
 
     /** 

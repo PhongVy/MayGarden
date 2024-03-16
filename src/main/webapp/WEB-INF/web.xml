@@ -116,6 +116,38 @@
         <servlet-name>SearchController</servlet-name>
         <servlet-class>com.controllers.SearchController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProfileController</servlet-name>
+        <servlet-class>com.controllers.ProfileController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadProfile</servlet-name>
+        <servlet-class>com.controllers.LoadProfile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateProfile</servlet-name>
+        <servlet-class>com.controllers.UpdateProfile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchAccount</servlet-name>
+        <servlet-class>com.controllers.SearchAccount</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchProduct</servlet-name>
+        <servlet-class>com.controllers.SearchProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchCategory</servlet-name>
+        <servlet-class>com.controllers.SearchCategory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddToCartController</servlet-name>
+        <servlet-class>com.controllers.AddToCartController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CartController</servlet-name>
+        <servlet-class>com.controllers.CartController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/Account</url-pattern>
@@ -231,6 +263,38 @@
     <servlet-mapping>
         <servlet-name>SearchController</servlet-name>
         <url-pattern>/Search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfileController</servlet-name>
+        <url-pattern>/ProfileAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadProfile</servlet-name>
+        <url-pattern>/LoadProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateProfile</servlet-name>
+        <url-pattern>/UpdateProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchAccount</servlet-name>
+        <url-pattern>/SearchAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchProduct</servlet-name>
+        <url-pattern>/SearchProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchCategory</servlet-name>
+        <url-pattern>/SearchCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddToCartController</servlet-name>
+        <url-pattern>/AddToCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartController</servlet-name>
+        <url-pattern>/Cart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

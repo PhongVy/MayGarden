@@ -5,9 +5,8 @@
 
 package com.controllers;
 
-import com.daos.LoginDAOV;
+import com.daos.ProfileDAO;
 import com.models.Accounts;
-import com.service.MD5;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -20,7 +19,7 @@ import jakarta.servlet.http.HttpSession;
  *
  * @author PC
  */
-public class LoginControllerV extends HttpServlet {
+public class ProfileController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -37,10 +36,10 @@ public class LoginControllerV extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginControllerV</title>");  
+            out.println("<title>Servlet ProfileController</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginControllerV at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet ProfileController at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -57,7 +56,26 @@ public class LoginControllerV extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession(false);
+        if(session != null){
+            Accounts loggedInUser = (Accounts) session.getAttribute("acc");
+            if (loggedInUser != null) {
+                // Lấy UserID của người dùng đã đăng nhập
+                int userId = loggedInUser.getUserId();
+                
+                // Truy vấn cơ sở dữ liệu để lấy thông tin chi tiết của người dùng
+                // Tạo một DAO để thực hiện truy vấn
+                ProfileDAO profileDAO = new ProfileDAO();
+                Accounts userDetail = profileDAO.getUserById(userId);
+                
+                // Đặt thông tin người dùng vào request attribute
+                request.setAttribute("userDetail", userDetail);
+                
+                // Chuyển hướng đến trang profile.jsp để hiển thị thông tin người dùng
+                request.getRequestDispatcher("ProfileUser.jsp").forward(request, response);
+                
+            }
+        }
     } 
 
     /** 
@@ -70,20 +88,7 @@ public class LoginControllerV extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String user = request.getParameter("username");
-            String pass = request.getParameter("password");
-            String md5 = MD5.getMd5(pass);
-            LoginDAOV loginDAO = new LoginDAOV();
-            Accounts a = loginDAO.checkLogin(user, pass);
-            if(a==null){
-                request.setAttribute("mess", "Wrong email or password!");
-                request.getRequestDispatcher("Login.jsp").forward(request, response);
-            }else {
-                HttpSession session = request.getSession();
-                session.setAttribute("acc", a);
-                session.setMaxInactiveInterval(1000000);
-                response.sendRedirect("index.jsp ");
-            } 
+        
     }
 
     /** 

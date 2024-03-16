@@ -5,6 +5,7 @@
 package com.daos;
 
 import com.connection.DBConnection;
+import com.models.Cart;
 import com.models.Categories;
 import com.models.Product;
 import java.sql.Connection;
@@ -49,9 +50,10 @@ public class ProductDAOV {
 
         return list;
     }
+
     public List<Product> getAllProduct() {
         List<Product> list = new ArrayList<>();
-        String query = "select * from Products";
+        String query = "select * from Products where Published = 'True'";
         try {
             conn = new DBConnection().getConnection();
             ps = conn.prepareStatement(query);
@@ -75,7 +77,7 @@ public class ProductDAOV {
 
         return list;
     }
-    
+
     public Product getProductById(String id) {
         String query = "select * from Products where ProductId = ?";
         try {
@@ -146,8 +148,8 @@ public class ProductDAOV {
         }
         return list;
     }
-    
-    public List<Product> getProductByCat(String CatId){
+
+    public List<Product> getProductByCat(String CatId) {
         List<Product> list = new ArrayList<>();
         String query = "select * from Products where CatId = ?";
         try {
@@ -174,12 +176,56 @@ public class ProductDAOV {
         return list;
     }
 
-    public static void main(String[] args) {
-        ProductDAOV dao = new ProductDAOV();
-        List<Categories> list = dao.getListCat();
-        
-        for (Categories o : list) {
-            System.out.println(o);
+    public List<Cart> getCartProducts(ArrayList<Cart> cartList) {
+        List<Cart> products = new ArrayList<Cart>();
+        try {
+            if (cartList != null && !cartList.isEmpty()) {
+                StringBuilder query = new StringBuilder("SELECT * FROM Products WHERE ProductId IN (");
+                for (int i = 0; i < cartList.size(); i++) {
+                    if (i > 0) {
+                        query.append(",");
+                    }
+                    query.append("?");
+                }
+                query.append(")");
+
+                conn = new DBConnection().getConnection();
+                ps = conn.prepareStatement(query.toString());
+                for (int i = 0; i < cartList.size(); i++) {
+                    ps.setInt(i + 1, cartList.get(i).getProductId());
+                }
+                rs = ps.executeQuery();
+                while (rs.next()) {
+                    Cart cart = new Cart();
+                    cart.setProductId(rs.getInt("ProductId"));
+                    cart.setProductName(rs.getString("ProductName"));
+                    cart.setPrice(rs.getFloat("Price"));
+                    cart.setQuantity(getQuantityByProductId(cartList, cart.getProductId()));
+                    cart.setTotalPrice(cart.getPrice() * cart.getQuantity());
+                    products.add(cart);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
+        return products;
     }
+
+    private int getQuantityByProductId(ArrayList<Cart> cartList, int productId) {
+        for (Cart cart : cartList) {
+            if (cart.getProductId() == productId) {
+                return cart.getQuantity();
+            }
+        }
+        return 0;
+    }
+
+//    public static void main(String[] args) {
+//        ProductDAOV dao = new ProductDAOV();
+//        List<Categories> list = dao.getListCat();
+//        
+//        for (Categories o : list) {
+//            System.out.println(o);
+//        }
+//    }
 }

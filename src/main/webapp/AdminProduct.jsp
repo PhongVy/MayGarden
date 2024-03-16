@@ -10,9 +10,20 @@
 <div style="margin: 10px 0px; position: absolute; right: 10px">
     <h1>List of accounts</h1>
 
-    <button style="font-weight:bold; padding: 10px 10px; background: #81c408; color:white; outline:none; border-radius: 30px; text-decoration:none; margin-bottom: 25px" class="btn" data-toggle="modal" data-target="#myModal">
-        Create New
-    </button>
+    <div style="display: flex; align-items: center; justify-content: space-between">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalAdd" style="font-weight:bold; padding: 10px 10px; margin-bottom: 10px; background: #0099FF; color:white; outline:none; border-radius: 10px;">
+            <a style="text-decoration: none"> Create </a>
+        </button>
+        <form method="post" action="SearchProduct">
+            <div style="display: flex; align-items: center">
+                <input name="txt" type="text" placeholder="Search" style="padding: 5px">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-search"></i>
+                </button>
+
+            </div>
+        </form>
+    </div>
     <div class="container">
         <!-- The Modal -->
         <div class="modal" id="myModal" >

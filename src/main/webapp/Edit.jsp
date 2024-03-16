@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="fullname">Fullname</label>
-                <input value="${detail.getFullName()}" name="Fullname" type="text" class="form-control" ">
+                <input value="${detail.getFullName()}" name="Fullname" type="text" class="form-control" >
             </div>
             <div class="form-group">
                 <label for="address">Address</label>

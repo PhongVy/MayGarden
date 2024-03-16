@@ -94,9 +94,8 @@
                             ${detail.isBestSaler()}
                         </dd></div><hr style="width:100%; border-style: inset;
                                    border-width: 1px;">
-                    <div style="display:flex; justify-content:space-between; margin-top: 15px">
-                        <a asp-action="Edit" asp-route-id="@Model?.ProductId" style="text-decoration:none; padding:10px 15px; background:#81C408; border: 2px solid #fff; border-radius: 10px">Edit</a>
-                        <a href="AdminProduct"  style="text-decoration:none; margin-top: 20px">Back to List</a>
+                    <div style=" text-align: right">
+                        <a href="AdminProduct"  style="text-decoration:none; margin-top: 20px;">Back to List</a>
                     </div>
                 </div>
             </div>

@@ -5,9 +5,8 @@
 
 package com.controllers;
 
-import com.daos.LoginDAOV;
-import com.models.Accounts;
-import com.service.MD5;
+import com.daos.AccountDAO;
+import com.daos.ProfileDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -20,7 +19,7 @@ import jakarta.servlet.http.HttpSession;
  *
  * @author PC
  */
-public class LoginControllerV extends HttpServlet {
+public class UpdateProfile extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -37,10 +36,10 @@ public class LoginControllerV extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginControllerV</title>");  
+            out.println("<title>Servlet UpdateProfile</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginControllerV at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet UpdateProfile at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -70,20 +69,24 @@ public class LoginControllerV extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String user = request.getParameter("username");
-            String pass = request.getParameter("password");
-            String md5 = MD5.getMd5(pass);
-            LoginDAOV loginDAO = new LoginDAOV();
-            Accounts a = loginDAO.checkLogin(user, pass);
-            if(a==null){
-                request.setAttribute("mess", "Wrong email or password!");
-                request.getRequestDispatcher("Login.jsp").forward(request, response);
-            }else {
-                HttpSession session = request.getSession();
-                session.setAttribute("acc", a);
-                session.setMaxInactiveInterval(1000000);
-                response.sendRedirect("index.jsp ");
-            } 
+        HttpSession session = request.getSession(false); // Không tạo session mới nếu không tồn tại
+
+        if (session != null) {
+            String userName = (String) session.getAttribute("userName");
+            String password = request.getParameter("password");
+            String fullName = request.getParameter("fullName");
+            String address = request.getParameter("address");
+            String phone = request.getParameter("phone");
+            String email = request.getParameter("email");
+
+            ProfileDAO dao = new ProfileDAO();
+            dao.updateProfile(userName, password, fullName, address, phone, email);
+
+            response.sendRedirect("ProfileAccount"); // Chuyển hướng sau khi cập nhật
+        } else {
+            // Xử lý khi session không tồn tại
+            response.sendRedirect("login.jsp");
+        }
     }
 
     /** 

@@ -8,13 +8,23 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="Admin.jsp" />
-<div style="margin: 10px 0px; position: absolute; right: 0">
+<div style="margin: 10px 0px; position: absolute; right: 5px">
     <h1>List of accounts</h1>
 
+    <div style="display: flex; align-items: center; justify-content: space-between">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalAdd" style="font-weight:bold; padding: 10px 10px; margin-bottom: 10px; background: #0099FF; color:white; outline:none; border-radius: 10px;">
+            <a style="text-decoration: none"> Create </a>
+        </button>
+        <form method="post" action="SearchAccount">
+            <div style="display: flex; align-items: center">
+                <input name="txt" type="text" placeholder="Search" style="padding: 5px">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-search"></i>
+                </button>
 
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalAdd" style="font-weight:bold; padding: 10px 10px; margin-bottom: 10px; background: #0099FF; color:white; outline:none; border-radius: 10px;">
-        <a style="text-decoration: none"> Create </a>
-    </button>
+            </div>
+        </form>
+    </div>
     <!-- Add Modal -->
     <div class="modal" id="myModalAdd">
         <div class="modal-dialog">
@@ -90,9 +100,9 @@
                 <tr>
                     <td style="border-right: 1px solid #333; border-bottom: 1px solid #333;">${Accounts.getUserId()}</td>
                     <td style="border-right: 1px solid #333; border-bottom: 1px solid #333;">${Accounts.getUserName()}</td>
-                    <td style="border-right: 1px solid #333; border-bottom: 1px solid #333;">${Accounts.getPassword()}</td>
+                    <td style="border-right: 1px solid #333; border-bottom: 1px solid #333;">${Accounts.getFullName()}</td>
                     <td style="border-bottom: 1px solid #333;" >
-                        <a  href="Load?uid=${Accounts.getUserId()}" class="btn btn-success" style="padding: 3px;  text-decoration: none">Edit</a> |
+                        <a  href="Load?uid=${Accounts.getUserId()}" class="btn btn-success" style="padding: 3px 16px;  text-decoration: none">Edit</a> |
                         <a href="Detail?uid=${Accounts.getUserId()}" class="btn btn-warning" style="padding: 3px; text-decoration: none">Details</a> |
                         <a href="Delete?UserId=${Accounts.getUserId()}" class="btn btn-danger" style="padding: 3px; text-decoration: none">Delete</a>
                     </td>

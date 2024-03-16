@@ -16,18 +16,19 @@ public class Order {
     private Date OrderDate;
     private Date ShipDate;
     private String Note;
+    private boolean OrderStatus;
 
-    public Order(int Order, int UserId, Date OrderDate, Date ShipDate, String Note) {
+    public Order() {
+    }
+
+    public Order(int Order, int UserId, Date OrderDate, Date ShipDate, String Note, boolean OrderStatus) {
         this.Order = Order;
         this.UserId = UserId;
         this.OrderDate = OrderDate;
         this.ShipDate = ShipDate;
         this.Note = Note;
+        this.OrderStatus = OrderStatus;
     }
-
-    public Order() {
-    }
-    
 
     public int getOrder() {
         return Order;
@@ -69,5 +70,14 @@ public class Order {
         this.Note = Note;
     }
 
+    public boolean isOrderStatus() {
+        return OrderStatus;
+    }
+
+    public void setOrderStatus(boolean OrderStatus) {
+        this.OrderStatus = OrderStatus;
+    }
+
+    
     
 }
