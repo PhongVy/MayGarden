@@ -4,26 +4,22 @@
  */
 package com.controllers;
 
-import com.daos.ProductDAOV;
 import com.models.Cart;
-import com.models.Categories;
-import com.models.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import static java.lang.System.out;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  *
  * @author PC
  */
-public class CartController extends HttpServlet {
+public class DeleteCart extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,18 +32,7 @@ public class CartController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("Cart");
         response.setContentType("text/html;charset=UTF-8");
-
-        if (cartList != null && !cartList.isEmpty()) {
-            ProductDAOV dao = new ProductDAOV();
-            List<Cart> cartProducts = dao.getCartProducts(cartList);
-            request.setAttribute("cartProducts", cartProducts);
-            request.getRequestDispatcher("Cart.jsp").forward(request, response);
-        } else {
-            System.out.println("Giỏ hàng trống");
-        }
 
     }
 
@@ -63,7 +48,28 @@ public class CartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try ( PrintWriter out = response.getWriter()) {
+            String id = request.getParameter("id");
+            if (id != null) {
+                ArrayList<Cart> cartList = (ArrayList<Cart>) request.getSession().getAttribute("Cart");
+                if (cartList != null) {
+                    Iterator<Cart> iterator = cartList.iterator();
+                    while (iterator.hasNext()) {
+                        Cart cartItem = iterator.next();
+                        if (cartItem.getProductId() == Integer.parseInt(id)) {
+                            iterator.remove();
+                            break;
+                        }
+                    }
+                    request.getSession().setAttribute("cartProducts", cartList);
+                }
+            }
+            response.sendRedirect("Cart.jsp");
+        } catch (Exception e) {
+            // Xử lý ngoại lệ
+        }
+
     }
 
     /**
@@ -77,7 +83,6 @@ public class CartController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
     }
 
     /**
