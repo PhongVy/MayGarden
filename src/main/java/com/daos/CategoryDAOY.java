@@ -133,6 +133,27 @@ public class CategoryDAOY {
         }
         return list;
     }
+    
+    public List<Categories> searchCategory(String txtSearch) {
+        List<Categories> list = new ArrayList<>();
+        String query = "select * from Categories where CatName like ?";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + txtSearch + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Categories(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3)));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
 
     public static void main(String[] args) {
         CategoryDAOY dao = new CategoryDAOY();

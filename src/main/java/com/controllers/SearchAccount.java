@@ -5,22 +5,21 @@
 
 package com.controllers;
 
-import com.daos.LoginDAOV;
+import com.daos.AccountDAO;
 import com.models.Accounts;
-import com.service.MD5;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  *
  * @author PC
  */
-public class LoginControllerV extends HttpServlet {
+public class SearchAccount extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,18 +31,7 @@ public class LoginControllerV extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet LoginControllerV</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet LoginControllerV at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -70,20 +58,12 @@ public class LoginControllerV extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String user = request.getParameter("username");
-            String pass = request.getParameter("password");
-            String md5 = MD5.getMd5(pass);
-            LoginDAOV loginDAO = new LoginDAOV();
-            Accounts a = loginDAO.checkLogin(user, pass);
-            if(a==null){
-                request.setAttribute("mess", "Wrong email or password!");
-                request.getRequestDispatcher("Login.jsp").forward(request, response);
-            }else {
-                HttpSession session = request.getSession();
-                session.setAttribute("acc", a);
-                session.setMaxInactiveInterval(1000000);
-                response.sendRedirect("index.jsp ");
-            } 
+        String txtSearch = request.getParameter("txt");
+        AccountDAO dao = new AccountDAO();
+        List<Accounts> list = dao.searchAccount(txtSearch);
+
+        request.setAttribute("listA", list);
+        request.getRequestDispatcher("AdminAccount.jsp").forward(request, response);
     }
 
     /** 

@@ -43,6 +43,14 @@
 
 
     <link href="./assets_1/css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <div class="py-1 bg-primary">
@@ -67,57 +75,62 @@
     </div>
 </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="index.jsp" style="font-size: 24px">MayGarden</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.jsp" style="font-size: 24px">MayGarden</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
 
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
 
-                    <!-- Menu -->
-                    <li class="nav-item"><a href="Home" class="nav-link" style="font-size: 16px">Home</a></li>
+                <!-- Menu -->
+                <li class="nav-item"><a href="Home" class="nav-link" style="font-size: 16px">Home</a></li>
 
-                    <li class="nav-item"><a href="Product" class="nav-link" style="font-size: 16px">Product</a></li>
-                    <li class="nav-item"><a href="About.jsp" class="nav-link" style="font-size: 16px">About us</a></li>
-                    <li class="nav-item"><a href="Contact.jsp" class="nav-link" style="font-size: 16px">Contact</a></li>
-                    
-                    <!-- Search -->
-                    <li class="d-flex me-0">
-                        <button class="border-0  bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal" style="outline: none; cursor: pointer"><i class="fas fa-search" style=" color: black;"></i></button>
-                    </li>
-                    
-                    <!-- Cart -->
-                    <li class="nav-item cta-colored"><a href="cart.html" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[0]</a></li>
-                    
-                    <!<!-- Accounts -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" style="margin-top: 3px" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-account_circle" style="font-size: 16px"></span></a>
+                <li class="nav-item"><a href="Product" class="nav-link" style="font-size: 16px">Product</a></li>
+                <li class="nav-item"><a href="About.jsp" class="nav-link" style="font-size: 16px">About us</a></li>
+                <li class="nav-item"><a href="Contact.jsp" class="nav-link" style="font-size: 16px">Contact</a></li>
+
+                <!-- Search -->
+                <li class="d-flex me-0">
+                    <button class="border-0  bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal" style="outline: none; cursor: pointer"><i class="fas fa-search" style=" color: black;"></i></button>
+                </li>
+
+                <!-- Cart -->
+                <c:if test="${sessionScope.acc == null}">
+                    <li class="nav-item cta-colored"><a href="Login.jsp" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[0]</a></li>
+                </c:if>
+                <c:if test="${sessionScope.acc.isAdmin eq false}">
+                    <li class="nav-item cta-colored"><a href="Cart" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[0]</a></li>
+                </c:if>
+                <!<!-- Accounts -->
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle" style="margin-top: 3px" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-account_circle" style="font-size: 16px"></span></a>
                         <c:if test="${sessionScope.acc == null}">
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
                             <a class="dropdown-item" href="Login.jsp">Login</a>
                             <a class="dropdown-item" href="Register.jsp">Register</a>
                         </div>
-                        </c:if>
-                        <c:if test="${sessionScope.acc.isAdmin eq true}">
+                    </c:if>
+                    <c:if test="${sessionScope.acc.isAdmin eq true}">
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
                             <a class="dropdown-item" href="Admin.jsp">Manage</a>
                             <a class="dropdown-item" href="Logout">Logout</a>
                         </div>
-                        </c:if>
-                        <c:if test="${sessionScope.acc != null && sessionScope.acc.isAdmin eq false}">
+                    </c:if>
+                    <c:if test="${sessionScope.acc != null && sessionScope.acc.isAdmin eq false}">
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="Profile.jsp">Profile</a>
+                            <a class="dropdown-item" href="ProfileAccount">Profile</a>
                             <a class="dropdown-item" href="Logout">Logout</a>
                         </div>
-                        </c:if>
-                    </li>
-                </ul>
-            </div>
+                    </c:if>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
 <!-- Modal Search Start -->
 <form action="Search" method="post">

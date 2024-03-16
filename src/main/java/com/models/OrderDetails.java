@@ -14,11 +14,16 @@ public class OrderDetails {
     private int ProductId;
     private int Quantity;
     private float Total;
-    private int UserId;
 
-    @Override
-    public String toString() {
-        return "OrderDetails{" + "OrderDetailId=" + OrderDetailId + ", OrderId=" + OrderId + ", ProductId=" + ProductId + ", Quantity=" + Quantity + ", Total=" + Total + ", UserId=" + UserId + '}';
+    public OrderDetails() {
+    }
+
+    public OrderDetails(int OrderDetailId, int OrderId, int ProductId, int Quantity, float Total) {
+        this.OrderDetailId = OrderDetailId;
+        this.OrderId = OrderId;
+        this.ProductId = ProductId;
+        this.Quantity = Quantity;
+        this.Total = Total;
     }
 
     public int getOrderDetailId() {
@@ -61,20 +66,5 @@ public class OrderDetails {
         this.Total = Total;
     }
 
-    public int getUserId() {
-        return UserId;
-    }
-
-    public void setUserId(int UserId) {
-        this.UserId = UserId;
-    }
-
-    public OrderDetails(int OrderDetailId, int OrderId, int ProductId, int Quantity, float Total, int UserId) {
-        this.OrderDetailId = OrderDetailId;
-        this.OrderId = OrderId;
-        this.ProductId = ProductId;
-        this.Quantity = Quantity;
-        this.Total = Total;
-        this.UserId = UserId;
-    }
+    
 }

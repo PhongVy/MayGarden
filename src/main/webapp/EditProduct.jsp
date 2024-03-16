@@ -10,9 +10,9 @@
     <jsp:include page="Admin.jsp" />
     <!-- Modal Header -->
     <form action="EditProduct" method="get" style="width: 600px; margin-left: 40%; border: 1px solid #81C408;  border-radius: 30px; margin-bottom: 25px">
-        <div class="modal-header">
-            <h1 style="text-align: center; font-weight:bold; color:#81C408">Edit Account</h1>
-        </div>
+       
+            <h1 style="text-align: center; font-weight:bold; color:#81C408; padding-top: 10px">Edit Product</h1>
+        
         <!-- Modal body -->
         <div class="modal-body">
             <!-- Thêm nội dung form tạo tài khoản mới -->

@@ -7,6 +7,7 @@ package com.controllers;
 
 import com.daos.AccountDAO;
 import com.models.Accounts;
+import com.models.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -56,6 +57,7 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        
         AccountDAO dao = new AccountDAO();
         List<Accounts> list = dao.getAllAccount();
 

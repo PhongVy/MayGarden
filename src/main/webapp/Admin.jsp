@@ -44,15 +44,15 @@
             </div>
             <hr>
             <div class="w3-container">
-                <h5>Menu</h5>
+                <a href="Admin.jsp" style="color: #000;"><h5>Menu</h5></a>
             </div>
             <div class="w3-bar-block">
                 <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-                <a href="~/Home" class="w3-bar-item w3-button w3-padding"><i class="fa-solid fa-house"></i>  Home Page</a>
                 <a href="Account" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Accounts</a>
-                <a href="~/Products/Index" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Products</a>
+                <a href="AdminProduct" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Products</a>
                 <a href="Category" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Categories</a>
-                <a href="~/Orders/Index" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
+                <a href="Order" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
+                <a href="FeedbackY" class="w3-bar-item w3-button w3-padding"><i class="fa fa-apple fa-fw"></i>  Feedbacks</a>
             </div>
         </nav>
 
