@@ -46,7 +46,7 @@
                             <tbody>
                                 <c:forEach var="product" items="${cartProducts}">
                                     <tr class="text-center">
-                                        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+                                        <td class="product-remove"><a href="DeleteCart?id=${product.getProductId()}"><span class="ion-ios-close"></span></a></td>
                                         <td class="image-prod"><img class="img" src="./assets/images/${product.getProductImage()}" alt=""></td>
                                         <td class="product-name"><h3>${product.getProductName()}</h3></td>
                                         <td class="price">$${product.getPrice()}</td>
