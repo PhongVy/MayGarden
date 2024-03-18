@@ -8,6 +8,7 @@ import com.connection.DBConnection;
 import com.models.Accounts;
 import com.models.Cart;
 import com.models.Order;
+import com.models.OrderDetails;
 import com.models.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,9 +38,45 @@ public class OrderDAOV {
                         rs.getInt(1), 
                         rs.getInt(2), 
                         rs.getDate(3), 
-                        rs.getDate(4), 
-                        rs.getString(5),
-                        rs.getBoolean(6)));
+                        rs.getString(4),
+                        rs.getBoolean(5),
+                        rs.getFloat(6)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+    
+    public List<Order> getViewHistor() {
+        List<Order> list = new ArrayList<>();
+        String query = "Select * from [Order]";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Order(
+                        rs.getInt(1), 
+                        rs.getInt(2), 
+                        rs.getDate(3), 
+                        rs.getString(4),
+                        rs.getBoolean(5),
+                        rs.getFloat(6)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+    
+    public List<OrderDetails> getAllOrderDetail() {
+        List<OrderDetails> list = new ArrayList<>();
+        String query = "Select * from OrderDetail";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new OrderDetails(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getFloat(5)));
             }
         } catch (Exception e) {
         }

@@ -43,10 +43,12 @@ public class CartController extends HttpServlet {
         if (cartList != null && !cartList.isEmpty()) {
             ProductDAOV dao = new ProductDAOV();
             List<Cart> cartProducts = dao.getCartProducts(cartList);
+            float total = dao.getTotalPriceCart(cartList);
+            request.setAttribute("total", total);
             request.setAttribute("cartProducts", cartProducts);
             request.getRequestDispatcher("Cart.jsp").forward(request, response);
         } else {
-            System.out.println("Giỏ hàng trống");
+            System.out.println("Cart.jsp");
         }
 
     }

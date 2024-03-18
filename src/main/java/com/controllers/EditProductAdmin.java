@@ -54,6 +54,7 @@ public class EditProductAdmin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        String proId = request.getParameter("proid");
         String name = request.getParameter("prodname");
         String cat = request.getParameter("catid");
         String shortdesc = request.getParameter("shortdesc");
@@ -65,7 +66,7 @@ public class EditProductAdmin extends HttpServlet {
         String unit = request.getParameter("unit");
         String best = request.getParameter("best");
         AdminProductDAO dao = new AdminProductDAO();
-        dao.updateProduct(name, cat, shortdesc, desc, price, imgae, date, unit, publish, best);
+        dao.updateProduct(proId,name, cat, shortdesc, desc, price, imgae, date, unit, publish, best);
         response.sendRedirect("AdminProduct");
     } 
 

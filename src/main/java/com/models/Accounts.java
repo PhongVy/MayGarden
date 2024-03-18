@@ -18,6 +18,11 @@ public class Accounts {
     private String Email;
     private boolean IsAdmin;
 
+    public Accounts() {
+    }
+    
+    
+
     public Accounts(int UserId, String UserName, String Password, String FullName, String Address, int Phone, String Email, boolean IsAdmin) {
         this.UserId = UserId;
         this.UserName = UserName;

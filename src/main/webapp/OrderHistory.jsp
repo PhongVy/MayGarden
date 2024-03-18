@@ -18,31 +18,31 @@
             <!-- Thêm nội dung form tạo tài khoản mới -->
             <div class="form-group">
                 <label for="username">UserID</label>
-                <input value="${Accounts.getUserId()}" name="userid" readonly type="text" class="form-control">
+                <input value="${Accounts.getUserId()}" name="Username" type="text" class="form-control">
             </div>
             <div class="form-group">
                 <label for="username">UserName</label>
-                <input value="${Accounts.getUserName()}" name="userName" type="text" class="form-control">
+                <input value="${Accounts.getUserName()}" name="Username" type="text" class="form-control">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input value="${Accounts.getPassword()}" name="password" type="password" class="form-control">
+                <input value="${Accounts.getPassword()}" name="Password" type="password" class="form-control">
             </div>
             <div class="form-group">
                 <label for="fullname">Fullname</label>
-                <input value="${Accounts.getFullName()}" name="fullname" type="text" class="form-control" >
+                <input value="${Accounts.getFullName()}" name="Fullname" type="text" class="form-control" >
             </div>
             <div class="form-group">
                 <label for="address">Address</label>
-                <input value="${Accounts.getAddress()}" name="address" type="text" class="form-control">
+                <input value="${Accounts.getAddress()}" name="Address" type="text" class="form-control">
             </div>
             <div class="form-group">
                 <label for="phone">Phone</label>
-                <input value="${Accounts.getPhone()}" name="phone" type="text" class="form-control">
+                <input value="${Accounts.getPhone()}" name="Phone" type="text" class="form-control">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input value="${Accounts.getEmail()}" name="email" type="text" class="form-control">
+                <input value="${Accounts.getEmail()}" name="Email" type="text" class="form-control">
             </div>
         </div>
         <!-- Modal footer -->

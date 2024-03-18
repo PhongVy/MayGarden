@@ -38,6 +38,24 @@ public class FeedbackDAOY {
             e.printStackTrace();
         }
     }
+    
+     public List<Feedback> getAllFeedback() {
+        List<Feedback> list = new ArrayList<>();
+        String query = "Select * from Feedback";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Feedback(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
 //    public static void main(String[] args) {
 //        CategoriesDAO dao = new CategoriesDAO();
 //        List<Categories> list = dao.getAllCategories();

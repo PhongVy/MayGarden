@@ -18,7 +18,7 @@
             <!-- Thêm nội dung form tạo tài khoản mới -->
             <div class="form-group">
                 <label>Product Id</label>
-                <input value="${prod.getProductId()}" name="prodid" type="text" readonly class="form-control">
+                <input value="${prod.getProductId()}" name="proid" type="text" readonly class="form-control">
             </div>
             <div class="form-group">
                 <label>Product Name</label>

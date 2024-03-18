@@ -52,7 +52,7 @@
                 <a href="AdminProduct" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Products</a>
                 <a href="Category" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Categories</a>
                 <a href="Order" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
-                <a href="FeedbackY" class="w3-bar-item w3-button w3-padding"><i class="fa fa-apple fa-fw"></i>  Feedbacks</a>
+                <a href="ListFeedback" class="w3-bar-item w3-button w3-padding"><i class="fa fa-apple fa-fw"></i>  Feedbacks</a>
             </div>
         </nav>
 

@@ -28,7 +28,7 @@
         </form>
     </div>
     <!-- The Modal -->
-    <div class="modal" id="myModal">
+    <div class="modal" id="myModalAdd">
         <div class="modal-dialog">
             <div class="modal-content">
                 <!-- Modal Header -->
@@ -56,7 +56,7 @@
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" value="AddCategory" >Create</button>
-                        <button type="button" class="btn btn-danger" value="Cancel" data-dismiss="modal">Close</button>
+                        <button  type="button" class="btn btn-danger" value="Cancel" data-dismiss="modal"><a href="Category" style="color:white">Close</a></button>
                     </div>
                 </form>
             </div>
