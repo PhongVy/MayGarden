@@ -54,18 +54,16 @@ public class DeleteCart extends HttpServlet {
             if (id != null) {
                 ArrayList<Cart> cartList = (ArrayList<Cart>) request.getSession().getAttribute("Cart");
                 if (cartList != null) {
-                    Iterator<Cart> iterator = cartList.iterator();
-                    while (iterator.hasNext()) {
-                        Cart cartItem = iterator.next();
-                        if (cartItem.getProductId() == Integer.parseInt(id)) {
-                            iterator.remove();
+                    for(Cart c:cartList ){
+                        if(c.getProductId()==Integer.parseInt(id)){
+                            cartList.remove(cartList.indexOf(c));
                             break;
                         }
                     }
-                    request.getSession().setAttribute("cartProducts", cartList);
+                    response.sendRedirect("Cart");
                 }
-            }
-            response.sendRedirect("Home");
+            } else{
+            response.sendRedirect("Cart");} 
         } catch (Exception e) {
             // Xử lý ngoại lệ
         }
