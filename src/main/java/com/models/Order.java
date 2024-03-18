@@ -14,20 +14,20 @@ public class Order {
     private int Order;
     private int UserId;
     private Date OrderDate;
-    private Date ShipDate;
     private String Note;
     private boolean OrderStatus;
+    private float TotalPrice;
 
     public Order() {
     }
 
-    public Order(int Order, int UserId, Date OrderDate, Date ShipDate, String Note, boolean OrderStatus) {
+    public Order(int Order, int UserId, Date OrderDate, String Note, boolean OrderStatus, float TotalPrice) {
         this.Order = Order;
         this.UserId = UserId;
         this.OrderDate = OrderDate;
-        this.ShipDate = ShipDate;
         this.Note = Note;
         this.OrderStatus = OrderStatus;
+        this.TotalPrice = TotalPrice;
     }
 
     public int getOrder() {
@@ -54,14 +54,6 @@ public class Order {
         this.OrderDate = OrderDate;
     }
 
-    public Date getShipDate() {
-        return ShipDate;
-    }
-
-    public void setShipDate(Date ShipDate) {
-        this.ShipDate = ShipDate;
-    }
-
     public String getNote() {
         return Note;
     }
@@ -78,6 +70,15 @@ public class Order {
         this.OrderStatus = OrderStatus;
     }
 
+    public float getTotalPrice() {
+        return TotalPrice;
+    }
+
+    public void setTotalPrice(float TotalPrice) {
+        this.TotalPrice = TotalPrice;
+    }
+
+    
     
     
 }

@@ -102,7 +102,7 @@
                     <li class="nav-item cta-colored"><a href="Login.jsp" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[0]</a></li>
                 </c:if>
                 <c:if test="${sessionScope.acc.isAdmin eq false}">
-                    <li class="nav-item cta-colored"><a href="Cart" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[0]</a></li>
+                <li class="nav-item cta-colored"><a href="Cart" class="nav-link" style=" margin-top: 3px"><span class="icon-shopping_cart" style="font-size: 16px;"></span>[${cartProducts.size()}]</a></li>
                 </c:if>
                 <!<!-- Accounts -->
                 <li class="nav-item dropdown">

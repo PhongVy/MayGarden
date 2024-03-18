@@ -109,13 +109,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="owl-demo" class="owl-carousel owl-theme" style="">
+                            <div id="owl-demo" class="carousel-testimony owl-carousel" style="">
                                 <c:forEach var="Categories" items="${listC}">
-                                    <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end item" style="background-image: url(./assets/images/category-1.jpg);">
+                                    <div class="item">
+                                    <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end " style="background-image: url(./assets/images/category-1.jpg);">
                                         <div class="text px-3 py-1">
-                                            <h2 class="mb-0"><a href="Category?CatId=${Categories.getCatId()}">${Categories.getCatName()}</a></h2>
+                                            <h2 class="mb-0"><a href="CategoryY?ccid=${Categories.getCatId()}">${Categories.getCatName()}</a></h2>
                                         </div>
                                     </div>
+                                        </div>
                                 </c:forEach>
 
                             </div>
@@ -204,6 +206,5 @@
 
             });
         </script>
-
     </body>
 </html>

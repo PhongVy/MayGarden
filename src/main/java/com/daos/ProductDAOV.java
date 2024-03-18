@@ -211,13 +211,36 @@ public class ProductDAOV {
         return products;
     }
 
-    private int getQuantityByProductId(ArrayList<Cart> cartList, int productId) {
+    public int getQuantityByProductId(ArrayList<Cart> cartList, int productId) {
         for (Cart cart : cartList) {
             if (cart.getProductId() == productId) {
                 return cart.getQuantity();
             }
         }
         return 0;
+    }
+
+    public float getTotalPriceCart(ArrayList<Cart> cartList) {
+        float sum = 0;
+
+        try {
+            if (cartList.size()>0) {
+                for (Cart item : cartList) {
+                    String query = "SELECT Price FROM Products WHERE ProductId=?";
+                    conn = new DBConnection().getConnection();
+                    ps = conn.prepareStatement(query);
+                    ps.setInt(1, item.getProductId());
+                    rs = ps.executeQuery();
+                    
+                    while(rs.next()){ 
+                        sum += rs.getFloat("Price")*item.getQuantity();
+                    }
+                }
+            }
+        } catch (Exception e) {
+        }
+
+        return sum;
     }
 
 //    public static void main(String[] args) {

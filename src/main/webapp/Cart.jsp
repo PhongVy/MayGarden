@@ -52,8 +52,11 @@
                                         <td class="price">$${product.getPrice()}</td>
                                         <td class="quantity">
                                             <div class="input-group mb-3">
-                                                <input type="text" name="quantity" class="quantity form-control input-number" value="${product.getQuantity()}" >
+                                                <a style="width: 50px; padding-top: 16px; background: #ccc; color: #000" onclick="totalClick(-1)" href="QuantityUpdate?action=dec&id=${product.getProductId()}" class="btn">-</a>
+                                                <span id='totalClicks' name="quantity" class="quantity form-control" style="padding-top: 16px"><p>${product.getQuantity()}</p></span>
+                                                <a style="width: 50px; padding-top: 16px; background: #ccc; color: #000" onclick="totalClick(1)" href="QuantityUpdate?action=inc&id=${product.getProductId()}" class="btn">+</a>
                                             </div>
+
                                         </td>
                                         <td class="total">$${product.getTotalPrice()}</td>
                                     </tr><!-- END TR-->
@@ -66,47 +69,12 @@
                 </div>
             </div>
             <div class="row justify-content-end">
-
-                <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-                    <div class="cart-total mb-3">
-                        <h3>Estimate shipping and tax</h3>
-                        <p>Enter your destination to get a shipping estimate</p>
-                        <form action="#" class="info">
-                            <div class="form-group">
-                                <label for="a">Country</label>
-                                <input type="text" class="form-control text-left px-3" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for="country">State/Province</label>
-                                <input type="text" class="form-control text-left px-3" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for="country">Zip/Postal Code</label>
-                                <input type="text" class="form-control text-left px-3" placeholder="">
-                            </div>
-                        </form>
-                    </div>
-                    <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Estimate</a></p>
-                </div>
                 <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
                     <div class="cart-total mb-3">
                         <h3>Cart Totals</h3>
-                        <p class="d-flex">
-                            <span>Subtotal</span>
-                            <span>$20.60</span>
-                        </p>
-                        <p class="d-flex">
-                            <span>Delivery</span>
-                            <span>$0.00</span>
-                        </p>
-                        <p class="d-flex">
-                            <span>Discount</span>
-                            <span>$3.00</span>
-                        </p>
-                        <hr>
                         <p class="d-flex total-price">
                             <span>Total</span>
-                            <span>$17.60</span>
+                            <span>$${(total>0)?total:0}</span>
                         </p>
                     </div>
                     <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
@@ -170,6 +138,21 @@
             });
 
         });
+function totalClick(Click) {
+            const totalClicks = document.getElementById('totalClicks');
+            let currentValue = parseInt(totalClicks.innerText);
+
+            // Kiểm tra nếu currentValue không phải là một số hợp lệ
+            if (isNaN(currentValue)) {
+                currentValue = 0; // Gán giá trị mặc định là 0 nếu không phải là một số hợp lệ
+            }
+
+            const sumvalue = currentValue + Click;
+            console.log(sumvalue);
+            totalClicks.innerText = sumvalue >= 0 ? sumvalue : 0; // Kiểm tra nếu sumvalue âm, gán bằng 0
+
+        }
+        
     </script>
 
 </body>

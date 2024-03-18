@@ -8,7 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="Admin.jsp" />
 <div style="margin: 10px 0px; position: absolute; right: 10px">
-    <h1>List of accounts</h1>
+    <h1>List of products</h1>
 
     <div style="display: flex; align-items: center; justify-content: space-between">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalAdd" style="font-weight:bold; padding: 10px 10px; margin-bottom: 10px; background: #0099FF; color:white; outline:none; border-radius: 10px;">
@@ -26,7 +26,7 @@
     </div>
     <div class="container">
         <!-- The Modal -->
-        <div class="modal" id="myModal" >
+        <div class="modal" id="myModalAdd" >
             <div class="modal-dialog" >
                 <div class="modal-content">
 

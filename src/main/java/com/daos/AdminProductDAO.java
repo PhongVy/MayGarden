@@ -85,7 +85,7 @@ public class AdminProductDAO {
         }
     }
     
-    public void updateProduct( String Name, String CatId, String ShortDesc, String Description, String Price, String Image, String DateCreate, String Unit, String publish, String Best){
+    public void updateProduct( String Name, String CatId, String ShortDesc, String Description, String Price, String Image, String DateCreate, String Unit, String publish, String Best, String ProductId){
         String query = "Update Products set  productName=?, CatId=?, ShortDesc=?, [Description]=?, Price=?, ProductImage=?, DateCreate=?, UnitInStock=?, Published=?, BestSaler=? where ProductId=?";
         try {
             conn = new DBConnection().getConnection();
@@ -100,6 +100,7 @@ public class AdminProductDAO {
             ps.setString(8, Unit);
             ps.setString(9, publish);
             ps.setString(10, Best);
+             ps.setString(11, ProductId);
             ps.executeUpdate();
         } catch (Exception e) {
         }

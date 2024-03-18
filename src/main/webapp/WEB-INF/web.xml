@@ -152,6 +152,18 @@
         <servlet-name>DeleteCart</servlet-name>
         <servlet-class>com.controllers.DeleteCart</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListFeedbackControllerY</servlet-name>
+        <servlet-class>com.controllers.ListFeedbackControllerY</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QuantityCart</servlet-name>
+        <servlet-class>com.controllers.QuantityCart</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QuantityUpdate</servlet-name>
+        <servlet-class>com.controllers.QuantityUpdate</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/Account</url-pattern>
@@ -303,6 +315,18 @@
     <servlet-mapping>
         <servlet-name>DeleteCart</servlet-name>
         <url-pattern>/DeleteCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListFeedbackControllerY</servlet-name>
+        <url-pattern>/ListFeedback</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuantityCart</servlet-name>
+        <url-pattern>/QuantityCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuantityUpdate</servlet-name>
+        <url-pattern>/QuantityUpdate</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

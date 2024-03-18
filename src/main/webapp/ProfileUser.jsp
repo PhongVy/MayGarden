@@ -25,7 +25,7 @@
                     <p style="font-family: 'Font Awesome 5 Free'; font-size: 20px">Address: ${userDetail.getAddress()}</p>
                     <p style="font-family: 'Font Awesome 5 Free'; font-size: 20px">Phone: ${userDetail.getPhone()}</p>
                     <a class="btn btn-primary" style="color: #fff">Order History</a>
-                    <a class="btn btn-primary" href="LoadProfile?aid=${Accounts.getUserId()}">Update Profile</a>
+                    <a class="btn btn-primary" href="LoadProfile?Accounts=${userDetail.getUserId()}">Update Profile</a>
                 </div>
             </div>
         </div>

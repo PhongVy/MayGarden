@@ -11,15 +11,14 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import static java.lang.System.out;
+import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  *
  * @author PC
  */
-public class DeleteCart extends HttpServlet {
+public class QuantityCart extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,7 +32,32 @@ public class DeleteCart extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        /// Lấy session từ request
+        HttpSession session = request.getSession();
+        
+        // Lấy danh sách sản phẩm từ session
+        ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("cartList");
+        
+        // Nếu cartList không null, tính tổng số lượng sản phẩm
+        int cartQuantity = 0;
+        if (cartList != null) {
+            cartQuantity = getCartQuantity(cartList);
+        }
+        
+        // Cập nhật giá trị cartQuantity vào request
+        request.setAttribute("cartQuantity", cartQuantity);
+        
+        // Chuyển hướng đến trang web hiển thị giỏ hàng
+        request.getRequestDispatcher("Home").forward(request, response);
+    }
 
+    // Phương thức tính tổng số lượng sản phẩm trong giỏ hàng
+    private int getCartQuantity(ArrayList<Cart> cartList) {
+        int totalQuantity = 0;
+        for (Cart cart : cartList) {
+            totalQuantity += cart.getQuantity();
+        }
+        return totalQuantity;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -48,28 +72,7 @@ public class DeleteCart extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            String id = request.getParameter("id");
-            if (id != null) {
-                ArrayList<Cart> cartList = (ArrayList<Cart>) request.getSession().getAttribute("Cart");
-                if (cartList != null) {
-                    Iterator<Cart> iterator = cartList.iterator();
-                    while (iterator.hasNext()) {
-                        Cart cartItem = iterator.next();
-                        if (cartItem.getProductId() == Integer.parseInt(id)) {
-                            iterator.remove();
-                            break;
-                        }
-                    }
-                    request.getSession().setAttribute("cartProducts", cartList);
-                }
-            }
-            response.sendRedirect("Home");
-        } catch (Exception e) {
-            // Xử lý ngoại lệ
-        }
-
+        processRequest(request, response);
     }
 
     /**
@@ -83,6 +86,7 @@ public class DeleteCart extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        processRequest(request, response);
     }
 
     /**
