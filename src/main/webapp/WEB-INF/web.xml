@@ -164,6 +164,10 @@
         <servlet-name>QuantityUpdate</servlet-name>
         <servlet-class>com.controllers.QuantityUpdate</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PageListProduct</servlet-name>
+        <servlet-class>com.controllers.PageListProduct</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/Account</url-pattern>
@@ -327,6 +331,10 @@
     <servlet-mapping>
         <servlet-name>QuantityUpdate</servlet-name>
         <url-pattern>/QuantityUpdate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PageListProduct</servlet-name>
+        <url-pattern>/PageListProduct</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

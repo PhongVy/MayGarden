@@ -8,7 +8,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="Admin.jsp" />
-<div style="margin: 10px 0px; position: absolute; right: 0">
+<div style="margin: 10px 0px; position: absolute; right: 5px">
     <h1>List of categories</h1>
 
 
@@ -85,10 +85,18 @@
                     <td style="border-bottom: 1px solid #333;" >
                         <a  href="LoadCategory?CatId=${Categories.getCatId()}" class="btn btn-success" style="padding: 3px 16px;  text-decoration: none">Edit</a> |
                         <a href="DetailCategory?CatId=${Categories.getCatId()}" class="btn btn-warning" style="padding: 3px; text-decoration: none">Details</a> |
-                        <a href="DeleteCategory?CatId=${Categories.getCatId()}" class="btn btn-danger" style="padding: 3px; text-decoration: none">Delete</a>
+                        <a href="#" onclick="showMess(${Categories.getCatId()})" class="btn btn-danger" style="padding: 3px; text-decoration: none">Delete</a>
                     </td>
                 </tr>
             </c:forEach>
         </tbody>
     </table>
 </div>
+<script>
+    function showMess(id) {
+        var option = confirm('Are you sure to delete');
+        if (option === true) {
+            window.location.href = 'DeleteCategory?CatId=' + id;
+        }
+    }
+</script>

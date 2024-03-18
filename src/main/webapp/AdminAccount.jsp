@@ -104,7 +104,7 @@
                     <td style="border-bottom: 1px solid #333;" >
                         <a  href="Load?uid=${Accounts.getUserId()}" class="btn btn-success" style="padding: 3px 16px;  text-decoration: none">Edit</a> |
                         <a href="Detail?uid=${Accounts.getUserId()}" class="btn btn-warning" style="padding: 3px; text-decoration: none">Details</a> |
-                        <a href="Delete?uid=${Accounts.getUserId()}" class="btn btn-danger" style="padding: 3px; text-decoration: none">Delete</a>
+                        <a href="#" onclick="showMess(${Accounts.getUserId()})" class="btn btn-danger" style="padding: 3px; text-decoration: none">Delete</a>
                     </td>
                 </tr>
             </c:forEach>
@@ -112,3 +112,11 @@
         </tbody>
     </table>
 </div>
+<script>
+    function showMess(id) {
+        var option = confirm('Are you sure to delete');
+        if (option === true) {
+            window.location.href = 'Delete?uid=' + id;
+        }
+    }
+</script>

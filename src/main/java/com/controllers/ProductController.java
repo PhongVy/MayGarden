@@ -57,12 +57,27 @@ public class ProductController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        String indexPage = request.getParameter("index");
+        if(indexPage == null){
+            indexPage = "1";
+        }
+        int index = Integer.parseInt(indexPage);
         ProductDAOV dao = new ProductDAOV();
         List<Categories> listCat = dao.getListCat();
         List<Product> list = dao.getAllProduct();
+        
+        int count = dao.getTotalProduct();
+        int endPage = count/6;
+        if(count % 6 != 0){
+            endPage++;
+        }
+        
+        List<Product> listp = dao.pagingProduct(index);
 
         request.setAttribute("listP", list);
+        request.setAttribute("listP", listp);
         request.setAttribute("listC", listCat);
+        request.setAttribute("endPage", endPage);
         request.getRequestDispatcher("Product.jsp").forward(request, response);
     } 
 

@@ -62,9 +62,9 @@
             </div>
             </div>
         <!-- Modal footer -->
-        <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center">
-            <button type="submit" class="btn btn-primary" value="EditProduct" style="margin-right: 30px">Save</button>
-            <a href="AdminProduct" class="btn btn-danger"  style="text-decoration:none;">Back to List</a>
+        <div class="modal-footer" style="display: flex;  align-items: center">
+            <button type="submit" class="btn btn-primary" value="EditProduct" style="">Save</button>
+            <a href="AdminProduct" class="btn btn-danger"  style="text-decoration:none;">Cancel</a>
         </div>
     </form>
 </html>

@@ -224,16 +224,16 @@ public class ProductDAOV {
         float sum = 0;
 
         try {
-            if (cartList.size()>0) {
+            if (cartList.size() > 0) {
                 for (Cart item : cartList) {
                     String query = "SELECT Price FROM Products WHERE ProductId=?";
                     conn = new DBConnection().getConnection();
                     ps = conn.prepareStatement(query);
                     ps.setInt(1, item.getProductId());
                     rs = ps.executeQuery();
-                    
-                    while(rs.next()){ 
-                        sum += rs.getFloat("Price")*item.getQuantity();
+
+                    while (rs.next()) {
+                        sum += rs.getFloat("Price") * item.getQuantity();
                     }
                 }
             }
@@ -243,11 +243,51 @@ public class ProductDAOV {
         return sum;
     }
 
+    public int getTotalProduct() {
+        String query = "SELECT count(*) from Products";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception e) {
+        }
+        return 0;
+    }
+
+    public List<Product> pagingProduct(int index) {
+        List<Product> list = new ArrayList<>();
+        String query = "SELECT * FROM Products ORDER BY ProductId OFFSET ? ROW FETCH NEXT 6 ROWS ONLY";
+        try {
+            conn = new DBConnection().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, (index - 1) * 6);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getFloat(6),
+                        rs.getString(7),
+                        rs.getDate(8),
+                        rs.getInt(9),
+                        rs.getBoolean(10),
+                        rs.getBoolean(11)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
 //    public static void main(String[] args) {
 //        ProductDAOV dao = new ProductDAOV();
-//        List<Categories> list = dao.getListCat();
+//        List<Product> list = dao.pagingProduct(1);
 //        
-//        for (Categories o : list) {
+//        for (Product o : list) {
 //            System.out.println(o);
 //        }
 //    }

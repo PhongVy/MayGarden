@@ -10,9 +10,6 @@
 <div style="margin: 10px 0px; position: absolute; right: 5px">
     <h1>List of orders</h1>
     
-    <button style="margin-bottom: 20px; font-weight:bold; padding: 10px 10px; background: #81c408; color:white; outline:none; border-radius: 30px; text-decoration:none">
-        Browse Order
-    </button>
      <table style="width: 1200px; border: 1px solid #333">
 
         <thead style="text-align: center ;border: 1px solid #333; background:#81c408; color:#fff; height:50px">
