@@ -9,7 +9,7 @@
 <html>
     <jsp:include page="Header.jsp" />
     <!-- Modal Header -->
-    <form action="UpdateProfile" method="post" style="width: 600px; margin-left: 30%; border: 1px solid #81C408;  border-radius: 30px; margin-top: 50px; margin-bottom: 150px"  >
+    <form action="UpdateProfile" method="get" style="width: 600px; margin-left: 30%; border: 1px solid #81C408;  border-radius: 30px; margin-top: 50px; margin-bottom: 150px"  >
         <div class="modal-header">
             <h1 style="padding-left: 140px; font-weight:bold; color:#81C408">Update Profile</h1>
         </div>
@@ -18,31 +18,31 @@
             <!-- Thêm nội dung form tạo tài khoản mới -->
             <div class="form-group">
                 <label for="username">UserID</label>
-                <input value="${Accounts.getUserId()}" name="userid" readonly type="text" class="form-control">
+                <input value="${Accounts.getUserId()}" name="Userid" type="text" readonly class="form-control">
             </div>
             <div class="form-group">
                 <label for="username">UserName</label>
-                <input value="${Accounts.getUserName()}" name="userName" type="text" class="form-control">
+                <input value="${Accounts.getUserName()}" name="Username" type="text" class="form-control">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input value="${Accounts.getPassword()}" name="password" type="password" class="form-control">
+                <input value="${Accounts.getPassword()}" name="Password" type="password" class="form-control">
             </div>
             <div class="form-group">
                 <label for="fullname">Fullname</label>
-                <input value="${Accounts.getFullName()}" name="fullname" type="text" class="form-control" >
+                <input value="${Accounts.getFullName()}" name="Fullname" type="text" class="form-control" >
             </div>
             <div class="form-group">
                 <label for="address">Address</label>
-                <input value="${Accounts.getAddress()}" name="address" type="text" class="form-control">
+                <input value="${Accounts.getAddress()}" name="Address" type="text" class="form-control">
             </div>
             <div class="form-group">
                 <label for="phone">Phone</label>
-                <input value="${Accounts.getPhone()}" name="phone" type="text" class="form-control">
+                <input value="${Accounts.getPhone()}" name="Phone" type="text" class="form-control">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input value="${Accounts.getEmail()}" name="email" type="text" class="form-control">
+                <input value="${Accounts.getEmail()}" name="Email" type="text" class="form-control">
             </div>
         </div>
         <!-- Modal footer -->

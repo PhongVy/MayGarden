@@ -19,7 +19,7 @@
                             Product ID:
                         </dt>
                         <dd class="col-sm-9" style="margin: 0 ">
-                            ${detail.getProductId()}
+                            ${detailproduct.getProductId()}
                         </dd>
 
                     </div><hr style="width:100%; border-style: inset;
@@ -28,74 +28,74 @@
                             Product Name:
                         </dt>
                         <dd class="col-sm-9" style="margin: 0 ">
-                            ${detail.getProductName()}
+                            ${detailproduct.getProductName()}
                         </dd></div><hr style="width:100%; border-style: inset;
                                    border-width: 1px;">
                     <div style="display: flex; margin-top: 30px"><dt class="col-sm-3" style="font-weight:bold">
                             Cat ID:
                         </dt>
                         <dd class="col-sm-9" style="margin: 0 ">
-                            ${detail.getCatId()}
+                            ${detailproduct.getCatId()}
                         </dd></div><hr style="width:100%; border-style: inset;
                                    border-width: 1px;">
                     <div style="display: flex; margin-top: 30px"><dt class="col-sm-3" style="font-weight:bold">
                             Short Desc:
                         </dt>
                         <dd class="col-sm-9" style="margin: 0 ">
-                            ${detail.getShortDesc()}
+                            ${detailproduct.getShortDesc()}
                         </dd></div><hr style="width:100%; border-style: inset;
                                    border-width: 1px;">
                     <div style="display: flex; margin-top: 30px"><dt class="col-sm-3" style="font-weight:bold">
                             Description:
                         </dt>
                         <dd class="col-sm-9" style="margin: 0 ">
-                            ${detail.getDescription()}
+                            ${detailproduct.getDescription()}
                         </dd></div><hr style="width:100%; border-style: inset;
                                    border-width: 1px;">
                     <div style="display: flex; margin-top: 30px"><dt class="col-sm-3" style="font-weight:bold">
                             Price:
                         </dt>
                         <dd class="col-sm-9" style="margin: 0 ">
-                            ${detail.getPrice()} $
+                            ${detailproduct.getPrice()} $
                         </dd></div><hr style="width:100%; border-style: inset;
                                    border-width: 1px;">
                     <div style="display: flex; margin-top: 30px"><dt class="col-sm-3" style="font-weight:bold">
                             Product Image:
                         </dt>
                         <dd class="col-sm-9" style="margin: 0 ">
-                            <img style="width:150px" src="./assets/images/${detail.getProductImage()}" alt="alt"/>
+                            <img style="width:150px" src="./assets/images/${detailproduct.getProductImage()}" alt="alt"/>
                         </dd></div><hr style="width:100%; border-style: inset;
                                    border-width: 1px;">
                     <div style="display: flex; margin-top: 30px"><dt class="col-sm-3" style="font-weight:bold">
                             Date Create:
                         </dt>
                         <dd class="col-sm-9" style="margin: 0 ">
-                            ${detail.getDateCreate()}
+                            ${detailproduct.getDateCreate()}
                         </dd></div><hr style="width:100%; border-style: inset;
                                    border-width: 1px;">
                     <div style="display: flex; margin-top: 30px"><dt class="col-sm-3" style="font-weight:bold">
                             Unit In Stock:
                         </dt>
                         <dd class="col-sm-9" style="margin: 0 ">
-                            ${detail.getUnitInStock()}
+                            ${detailproduct.getUnitInStock()}
                         </dd></div><hr style="width:100%; border-style: inset;
                                    border-width: 1px;">
                     <div style="display: flex; margin-top: 30px"><dt class="col-sm-3" style="font-weight:bold">
                             Published:
                         </dt>
                         <dd class="col-sm-9" style="margin: 0 ">
-                            ${detail.isPublished()}
+                            ${detailproduct.isPublished()}
                         </dd></div><hr style="width:100%; border-style: inset;
                                    border-width: 1px;">
                     <div style="display: flex; margin-top: 30px"><dt class="col-sm-3" style="font-weight:bold">
                             Best Sale:
                         </dt>
                         <dd class="col-sm-9" style="margin: 0 ">
-                            ${detail.isBestSaler()}
+                            ${detailproduct.isBestSaler()}
                         </dd></div><hr style="width:100%; border-style: inset;
                                    border-width: 1px;">
                     <div style=" text-align: right">
-                        <a href="AdminProduct"  style="text-decoration:none; margin-top: 20px;">Back to List</a>
+                        <a href="AdminProduct" class="btn btn-danger"  style="text-decoration:none;">Back to List</a>
                     </div>
                 </div>
             </div>

@@ -17,10 +17,11 @@ import java.sql.ResultSet;
  * @author PC
  */
 public class ProfileDAO {
+
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
-    
+
     public Accounts getUserById(int id) {
         String query = "select * from Accounts where UserId = ?";
         try {
@@ -43,19 +44,21 @@ public class ProfileDAO {
         }
         return null;
     }
-    
-    public void updateProfile( String UserName, String Password, String FullName, String Address, String Phone, String Email){
 
-        String query = "Update Accounts set  UserName=?, Password=?, FullName=?, Address=?, Phone=?, Email=? where UserId=?";
+    public void updateProfile(String userid, String username, String password, String fullname, String address, String phone, String email,  Boolean isadmin) {
+
+        String query = "Update Accounts set UserName=?, Password=?, FullName=?, Address=?, Phone=?, Email=?, Isadmin=? where UserId=?";
         try {
             conn = new DBConnection().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, UserName);
-            ps.setString(2, Password);
-            ps.setString(3, FullName);
-            ps.setString(4, Address);
-            ps.setString(5, Phone);
-            ps.setString(6, Email);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ps.setString(3, fullname);
+            ps.setString(4, address);
+            ps.setString(5, phone);
+            ps.setString(6, email);
+            ps.setBoolean(7, isadmin);
+            ps.setString(8, userid);
             ps.executeUpdate();
         } catch (Exception e) {
         }

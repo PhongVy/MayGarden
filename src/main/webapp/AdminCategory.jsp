@@ -41,10 +41,6 @@
                     <div class="modal-body">
                         <!-- Thêm nội dung form tạo category mới -->
                         <div class="form-group">
-                            <label for="catid">CatId:</label>
-                            <input required name="CatId" type="text" class="form-control">
-                        </div>   
-                        <div class="form-group">
                             <label for="catname">CatName:</label>
                             <input required name="CatName" type="text" class="form-control">
                         </div>  
@@ -56,13 +52,12 @@
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" value="AddCategory" >Create</button>
-                        <button  type="button" class="btn btn-danger" value="Cancel" data-dismiss="modal"><a href="Category" style="color:white">Close</a></button>
+                        <button type="button" class="btn btn-danger" value="Cancel" data-dismiss="modal">Close</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
     <table style="width: 1200px; text-align:center; border: 1px solid #333">
         <thead style="border: 1px solid #333; background:#82ae46; color:#fff; height:50px">
             <tr>
@@ -88,13 +83,12 @@
                     <td style="border-right: 1px solid #333; border-bottom: 1px solid #333;">${Categories.getCatName()}</td>
                     <td style="border-right: 1px solid #333; border-bottom: 1px solid #333;">${Categories.getDescription()}</td>
                     <td style="border-bottom: 1px solid #333;" >
-                        <a  href="LoadCategory?CatId=${Categories.getCatId()}" class="btn btn-success" style="padding: 3px;  text-decoration: none">Edit</a> |
+                        <a  href="LoadCategory?CatId=${Categories.getCatId()}" class="btn btn-success" style="padding: 3px 16px;  text-decoration: none">Edit</a> |
                         <a href="DetailCategory?CatId=${Categories.getCatId()}" class="btn btn-warning" style="padding: 3px; text-decoration: none">Details</a> |
                         <a href="DeleteCategory?CatId=${Categories.getCatId()}" class="btn btn-danger" style="padding: 3px; text-decoration: none">Delete</a>
                     </td>
                 </tr>
             </c:forEach>
-        </tbody>
         </tbody>
     </table>
 </div>

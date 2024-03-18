@@ -104,7 +104,7 @@
                     <td style="border-bottom: 1px solid #333;" >
                         <a  href="Load?uid=${Accounts.getUserId()}" class="btn btn-success" style="padding: 3px 16px;  text-decoration: none">Edit</a> |
                         <a href="Detail?uid=${Accounts.getUserId()}" class="btn btn-warning" style="padding: 3px; text-decoration: none">Details</a> |
-                        <a href="Delete?UserId=${Accounts.getUserId()}" class="btn btn-danger" style="padding: 3px; text-decoration: none">Delete</a>
+                        <a href="Delete?uid=${Accounts.getUserId()}" class="btn btn-danger" style="padding: 3px; text-decoration: none">Delete</a>
                     </td>
                 </tr>
             </c:forEach>

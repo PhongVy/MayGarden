@@ -86,10 +86,12 @@
                                                     <p>${pro.getDescription()}</p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0">${pro.getPrice()} $/kg</p>
-
-                                                        <a href="AddToCart?id=${pro.getProductId()}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-
-
+                                                        <c:if test="${sessionScope.acc != null && sessionScope.acc.isAdmin eq false}">
+                                                            <a href="AddToCart?id=${pro.getProductId()}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        </c:if>
+                                                        <c:if test="${sessionScope.acc == null}">
+                                                            <a href="AddToCart?id=${pro.getProductId()}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        </c:if>
                                                     </div>
                                                 </div>
                                             </div>

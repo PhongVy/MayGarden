@@ -54,11 +54,11 @@ public class DeleteAccountController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String UserId = request.getParameter("UserId");
+        String UserId = request.getParameter("uid");
         AccountDAO dao = new AccountDAO();
         dao.DeleteAccount(UserId);
         response.sendRedirect("Account");
-    } 
+   } 
 
     /** 
      * Handles the HTTP <code>POST</code> method.

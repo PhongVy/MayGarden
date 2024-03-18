@@ -43,20 +43,21 @@ public class CategoryDAOY {
         return list;
     }
 
-    public void InsertCat(int catid, String catname, String description) {
-        String query = "Insert into Categories "
-                + "values(?,?,?)";
+    public void insertCat(String catname, String description) {
+        String query = "INSERT INTO Categories (CatName, Description) VALUES (?, ?)";
         try {
             conn = new DBConnection().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setInt(1, catid);
-            ps.setString(2, catname);
-            ps.setString(3, description);
+            ps.setString(1, catname);
+            ps.setString(2, description);
             ps.executeUpdate();
         } catch (Exception e) {
+            e.printStackTrace(); // In ra lỗi để kiểm tra và xử lý
+        } finally {
+            // Đóng kết nối và các tài nguyên khác ở đây nếu cần thiết
         }
     }
-    
+
     public Categories getCatByID(String CatId) {
         String query = "select * from Categories where CatId = ?";
         try {
@@ -74,7 +75,7 @@ public class CategoryDAOY {
         return null;
 
     }
-    
+
     public void EditCat(String catid, String catname, String description) {
         String query = "Update Categories set CatName=?, Description=? where CatId=?";
         try {
@@ -107,7 +108,6 @@ public class CategoryDAOY {
 //            System.out.println(o);
 //        }
 //    }
-  
     public List<Product> getCatById(String CatId) {
         List<Product> list = new ArrayList<>();
         String query = "select * from Products where CatId = ?";
@@ -133,7 +133,7 @@ public class CategoryDAOY {
         }
         return list;
     }
-    
+
     public List<Categories> searchCategory(String txtSearch) {
         List<Categories> list = new ArrayList<>();
         String query = "select * from Categories where CatName like ?";
@@ -153,7 +153,6 @@ public class CategoryDAOY {
 
         return list;
     }
-
 
     public static void main(String[] args) {
         CategoryDAOY dao = new CategoryDAOY();
