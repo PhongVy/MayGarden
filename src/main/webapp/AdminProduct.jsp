@@ -33,64 +33,63 @@
                     <!-- Modal Header -->
                     <form action="CreateProduct" method="post">
                         <div class="modal-header">
+                            <h4 class="modal-title">Create New Product</h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
                         <!-- Modal body -->
-                        <div class="" style="padding-left: 10%; margin: 5px 0">
-                            <div class="" style="width: 400px;  border-radius: 30px">
-                                <div style="padding:30px; width: 400px">
-                                    <h1 style="text-align: center; font-weight:bold; color:#81C408">Create New Product</h1>
-                                    <div class="text-danger"></div>
-                                    <div class="form-group" style="padding: 5px">
-                                        <label class="control-label">Product Id</label>
-                                        <input name="prodId" type="text" class="form-control" required style="margin: 0 0px; width: 330px" />
-                                    </div>
-                                    <div class="form-group" style="padding: 5px">
-                                        <label class="control-label">Product Name</label>
-                                        <input name="prodName" type="text" class="form-control" required style="margin: 0 0px; width: 330px" />
-                                    </div>
-                                    <div class="form-group" style="padding: 5px">
-                                        <label class="control-label">Category</label>
-                                        <input name="catId" type="text" class="form-control" required style="margin: 0 0px; width: 330px" />
-                                    </div>
-                                    <div class="form-group" style="padding: 5px">
-                                        <label class="control-label">Short Desc </label>
-                                        <input name="shortDesc" type="text" class="form-control" required style="margin: 0 0px; width: 330px"/>
-                                    </div>
-                                    <div class="form-group" style="padding: 5px">
-                                        <label class="control-label">Description</label>
-                                        <input name="description" type="text" class="form-control" required style="margin: 0 0px; width: 330px"/>
-                                    </div>
-                                    <div class="form-group" style="padding: 5px">
-                                        <label class="control-label">Price</label>
-                                        <input name="price" type="text" class="form-control" required style="margin: 0 0px; width: 330px" />
-                                    </div>
-                                    <div class="form-group" style="padding: 5px">
-                                        <label class="control-label">Product Image</label>
-                                        <input name="prodImage" type="text" class="form-control" required  style="margin: 0 0px; width: 330px" />
-                                    </div>
-                                    <div class="form-group" style="padding: 5px">
-                                        <label class="control-label">Date Create</label>
-                                        <input type="date" name="dateCreate" class="form-control" required style="margin: 0 0px; width: 330px" />
-                                    </div>
-                                    <div class="form-group" style="padding: 5px">
-                                        <label class="control-label">Unit In Stock</label>
-                                        <input name="unitStock" type="text" class="form-control" required style="margin: 0 0px; width: 330px" />
-                                    </div>
-                                    <div class="form-group" style="padding: 5px">
-                                        <label class="control-label">Published</label>
-                                        <input name="published" type="text" class="form-control" required style="margin: 0 0px; width: 330px" />
-                                    </div>
-                                    <div class="form-group" style="padding: 5px">
-                                        <label class="control-label">Best Seller</label>
-                                        <input name="betSeller" type="text" class="form-control" required style="margin: 0 0px; width: 330px" />
-                                        </div>
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">                                  
-                                        <button type="submit" class="btn btn-primary" value="CreateProduct">Create</button>
+                        <div class="modal-body">
+                            <!-- Thêm nội dung form tạo tài khoản mới -->
+                            <div class="form-group">
+                                <div class="text-danger"></div>
+                                <div class="form-group">
+                                    <label>Product Id</label>
+                                    <input name="prodId" type="text" class="form-control" required  />
+                                </div>
+                                <div class="form-group">
+                                    <label>Product Name</label>
+                                    <input name="prodName" type="text" class="form-control" required  />
+                                </div>
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <input name="catId" type="text" class="form-control" required  />
+                                </div>
+                                <div class="form-group">
+                                    <label>Short Desc </label>
+                                    <input name="shortDesc" type="text" class="form-control" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <input name="description" type="text" class="form-control" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>Price</label>
+                                    <input name="price" type="text" class="form-control" required  />
+                                </div>
+                                <div class="form-group">
+                                    <label>Product Image</label>
+                                    <input name="prodImage" type="text" class="form-control" required  />
+                                </div>
+                                <div class="form-group">
+                                    <label>Date Create</label>
+                                    <input type="date" name="dateCreate" class="form-control" required  />
+                                </div>
+                                <div class="form-group">
+                                    <label>Unit In Stock</label>
+                                    <input name="unitStock" type="text" class="form-control" required  />
+                                </div>
+                                <div class="form-group">
+                                    <label>Published</label>
+                                    <input name="published" type="text" class="form-control" required  />
+                                </div>
+                                <div class="form-group">
+                                    <label>Best Seller</label>
+                                    <input name="betSeller" type="text" class="form-control" required  />
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">                                  
+                                    <button type="submit" class="btn btn-primary" value="CreateProduct">Create</button>
 
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    </div>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>

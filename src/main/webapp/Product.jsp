@@ -83,31 +83,26 @@
                                                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruit</div>
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                     <a href="DetailY?pid=${pro.getProductId()}"><h4>${pro.getProductName()}</h4></a>
-                                                    <p>${pro.getDescription()}</p>
+                                                    <p>${pro.getShortDesc()}</p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0">${pro.getPrice()} $/kg</p>
                                                         <c:if test="${sessionScope.acc != null && sessionScope.acc.isAdmin eq false}">
                                                             <a href="AddToCart?id=${pro.getProductId()}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                                         </c:if>
                                                         <c:if test="${sessionScope.acc == null}">
-                                                            <a href="AddToCart?id=${pro.getProductId()}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                            <a href="Login.jsp" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                                         </c:if>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </c:forEach>
-
+                                    
                                     <div class="col-12">
                                         <div class="pagination d-flex justify-content-center mt-5">
-                                            <a href="#" class="rounded">&laquo;</a>
-                                            <a href="#" class="active rounded">1</a>
-                                            <a href="#" class="rounded">2</a>
-                                            <a href="#" class="rounded">3</a>
-                                            <a href="#" class="rounded">4</a>
-                                            <a href="#" class="rounded">5</a>
-                                            <a href="#" class="rounded">6</a>
-                                            <a href="#" class="rounded">&raquo;</a>
+                                            <c:forEach begin="1" end="${endPage}" var="i">
+                                            <a href="Product?index=${i}" class="rounded">${i}</a>
+                                            </c:forEach>
                                         </div>
                                     </div>
                                 </div>

@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a href="index.html">Product</a></span> <span>Product Single</span></p>
+                <p class="breadcrumbs"><span class="mr-2"><a href="Home">Home</a></span> <span class="mr-2"><a href="Product">Product</a></span> <span>Product Single</span></p>
                 <h1 class="mb-0 bread">Product Single</h1>
             </div>
         </div>
@@ -26,12 +26,12 @@
             </div>
             <div class="col-lg-6 product-details pl-md-5 ftco-animate">
                 <h3>${detail.getProductName()}</h3>
-                
+
                 <p class="price"><span>${detail.getPrice()} $</span></p>
-                <p>${detail.getShortDesc()}
+                <p>${detail.getDescription()}
                 </p>
                 <div class="row mt-4">
-                    
+
                     <div class="w-100"></div>
                     <div class="input-group col-md-6 d-flex mb-3">
                         <span class="input-group-btn mr-2">
@@ -47,9 +47,14 @@
                         </span>
                     </div>
                     <div class="w-100"></div>
-                  
+
                 </div>
-                <p><a href="cart.html" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+                <c:if test="${sessionScope.acc != null && sessionScope.acc.isAdmin eq false}">
+                    <p><a href="AddToCart?id=${detail.getProductId()}" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+                </c:if>
+                <c:if test="${sessionScope.acc == null}">
+                    <p><a href="Login.jsp" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+                </c:if>
             </div>
         </div>
     </div>
@@ -68,36 +73,36 @@
     <div class="container">
         <div class="row">
             <c:forEach items="${listP}" var="pro">
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="product">
-                    <a href="DetailY?pid=${pro.getProductId()}" class="img-prod"><img class="img-fluid" src="assets/images/${pro.getProductImage()}" alt="Colorlib Template">
-                        <span class="status">30%</span>
-                        <div class="overlay"></div>
-                    </a>
-                    <div class="text py-3 pb-4 px-3 text-center">
-                        <h3><a href="#">${pro.getProductName()}</a></h3>
-                        <div class="d-flex">
-                            <div class="pricing">
-                                <p class="price"><span class="price-sale">${pro.getPrice()} $/kg</span></p>
+                <div class="col-md-6 col-lg-3 ftco-animate">
+                    <div class="product">
+                        <a href="DetailY?pid=${pro.getProductId()}" class="img-prod"><img class="img-fluid" src="assets/images/${pro.getProductImage()}" alt="Colorlib Template">
+                            <span class="status">30%</span>
+                            <div class="overlay"></div>
+                        </a>
+                        <div class="text py-3 pb-4 px-3 text-center">
+                            <h3><a href="#">${pro.getProductName()}</a></h3>
+                            <div class="d-flex">
+                                <div class="pricing">
+                                    <p class="price"><span class="price-sale">${pro.getPrice()} $/kg</span></p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="bottom-area d-flex px-3">
-                            <div class="m-auto d-flex">
-                                <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-                                    <span><i class="ion-ios-menu"></i></span>
-                                </a>
-                                <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                                    <span><i class="ion-ios-cart"></i></span>
-                                </a>
-                                <a href="#" class="heart d-flex justify-content-center align-items-center ">
-                                    <span><i class="ion-ios-heart"></i></span>
-                                </a>
+                            <div class="bottom-area d-flex px-3">
+                                <div class="m-auto d-flex">
+                                    <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                                        <span><i class="ion-ios-menu"></i></span>
+                                    </a>
+                                    <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                                        <span><i class="ion-ios-cart"></i></span>
+                                    </a>
+                                    <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                                        <span><i class="ion-ios-heart"></i></span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-</c:forEach>
+            </c:forEach>
         </div>
     </div>
 </section>

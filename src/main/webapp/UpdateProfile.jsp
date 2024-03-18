@@ -48,7 +48,7 @@
         <!-- Modal footer -->
         <div class="modal-footer">
             <button type="submit" class="btn btn-primary" value="UpdateProfile" >Save</button>
-            <a href="ProfileAccount">Back to profile page</a>
+            <a href="ProfileAccount">Cancel</a>
         </div>
     </form>
             <jsp:include page="Footer.jsp" />

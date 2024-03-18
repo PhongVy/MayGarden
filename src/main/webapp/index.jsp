@@ -112,12 +112,12 @@
                             <div id="owl-demo" class="carousel-testimony owl-carousel" style="">
                                 <c:forEach var="Categories" items="${listC}">
                                     <div class="item">
-                                    <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end " style="background-image: url(./assets/images/category-1.jpg);">
-                                        <div class="text px-3 py-1">
-                                            <h2 class="mb-0"><a href="CategoryY?ccid=${Categories.getCatId()}">${Categories.getCatName()}</a></h2>
+                                        <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end " style="background-image: url(./assets/images/category-1.jpg);">
+                                            <div class="text px-3 py-1">
+                                                <h2 class="mb-0"><a href="CategoryY?ccid=${Categories.getCatId()}">${Categories.getCatName()}</a></h2>
+                                            </div>
                                         </div>
                                     </div>
-                                        </div>
                                 </c:forEach>
 
                             </div>
@@ -157,9 +157,16 @@
                                     </div>
                                     <div class="bottom-area d-flex px-3">
                                         <div class="m-auto d-flex">
-                                            <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                                                <span><i class="ion-ios-cart"></i></span>
-                                            </a>
+                                            <c:if test="${sessionScope.acc != null && sessionScope.acc.isAdmin eq false}">
+                                                <a href="AddToCart?id=${pro.getProductId()}" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                                                    <span><i class="ion-ios-cart"></i></span>
+                                                </a>
+                                            </c:if>
+                                            <c:if test="${sessionScope.acc == null}">
+                                                <a href="Login.jsp" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                                                    <span><i class="ion-ios-cart"></i></span>
+                                                </a>
+                                            </c:if>
                                         </div>
                                     </div>
                                 </div>
