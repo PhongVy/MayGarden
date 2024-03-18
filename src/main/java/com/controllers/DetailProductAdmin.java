@@ -59,7 +59,7 @@ public class DetailProductAdmin extends HttpServlet {
         AdminProductDAO dao = new AdminProductDAO();
         Product p = dao.getProductById(id);
         
-        request.setAttribute("detail", p);
+        request.setAttribute("detailproduct", p);
         request.getRequestDispatcher("AdminProductDetail.jsp").forward(request, response);
     } 
 

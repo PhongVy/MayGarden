@@ -32,7 +32,7 @@
         <!-- Modal footer -->
         <div class="modal-footer">
             <button type="submit" class="btn btn-primary" value="EditCategory" >Save</button>
-            <button type="button" class="btn btn-danger" value="Cancel" data-dismiss="modal"><a href="Category" style="color: white">Close</a></button>
+            <a href="Category" class="btn btn-danger"  style="text-decoration:none;">Back to List</a>
         </div>
     </form>
 </html>
